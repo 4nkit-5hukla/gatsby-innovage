@@ -11,7 +11,7 @@ export default (props) => {
     <>
   <Layout>
     <SEO title="Web Hosting" />
-   <section className="web-hosting p-0 m-0">
+   <section className="banner-for-all p-0 m-0">
         <div className="layer"></div>
         <Container>
             <Row>

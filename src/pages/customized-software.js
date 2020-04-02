@@ -10,7 +10,7 @@ export default (props) => {
     <>
      <Layout>
     <SEO title="Customized Software Development" />
-    <section className="web-hosting">
+    <section className="banner-for-all">
         <div className="layer"></div>
         <Container>
             <Row>

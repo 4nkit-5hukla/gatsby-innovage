@@ -6,6 +6,9 @@ p {
 	color: #272727;
 	line-height: 1.66em;
 }
+.header-part ul li{
+	margin-bottom: 0;
+}
 /*home-banner*/
 .banner-title.row h1 {
 	font-size: 36px;
@@ -322,8 +325,9 @@ body .medium {
 	padding: 5px;
 	font-family:"Montserrat-Regular";
 }
-.web-hosting{
+.banner-for-all{
 	background-image: url('../img/banner1.png');
+	background-attachment:fixed;
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -354,3 +358,91 @@ body .medium {
 	width: 75%;
 }
 /*end seo-and-sem*/
+/*for-school*/
+.sms .our-solutions-icon .ic img {
+	width: 50px;
+}
+.sms .our-solutions-icon {
+	width: 100px;
+	height: 100px;
+}
+.modules .our-solutions-icon {
+	width:85px;
+	height:85px;
+	border: 1px solid rgba(255,33,79,0.4);
+	box-shadow: 0px 0px 30px -10px rgba(255,33,79,0.7);
+	margin-top: -50px;
+}
+.modules .box-title {
+	font-size: 26px;
+}
+.modules .our-solutions-icon .ic img {
+	width: 50px;
+}
+.try-more-feat h2{
+	color:#ff214f;
+}
+/*end for-school*/
+/*for-coaching*/
+.module-for-coaching{
+	background-image: url('../img/services.jpg');
+	background-attachment:fixed;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.plan-price-coaching{
+	background-image: url('../img/our-services.jpg');
+	background-attachment:fixed;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+.plan-price-for-coaching b {
+	font-size: 14px;
+}
+.plan-price-coaching .p-price {
+	width:130px;
+	height:130px;
+	border-radius: 50%;
+	border: 1px solid gray;
+	box-shadow: 0px 0px 30px -10px gray;
+	text-align: center;
+	display: table;
+	margin: 0px auto;
+}
+.p-price-bg {
+	border: 2px solid gray;
+}
+
+/*end for-coaching*/
+/*for-corporate*/
+.login-access {
+	width: 85%;
+}
+/*end for-corporate*/
+/*contact-us*/
+.contact-us{
+	background-image: url('../img/contact.jpg');
+	background-attachment:fixed;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	max-height: 400px;
+	height: 350px;
+	position: relative;
+}
+.contact-page-form input, .contact-page-form textarea {
+	width: 100%;
+	border: 1px solid #dee2e6;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 14px;
+}
+.contact-form-outer {
+	background-color: #f7f7f7;
+}
+/*end contact us*/

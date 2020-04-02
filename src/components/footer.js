@@ -4,7 +4,6 @@ import {Container, Row, Col} from 'reactstrap';
 
 
 const Footer = props => {
- 
   return (
 	<footer className="footer py-5" style={{ backgroundColor: '#1c1c1c', borderRadius: '0', color: '#fff' }}>
 		<Container>

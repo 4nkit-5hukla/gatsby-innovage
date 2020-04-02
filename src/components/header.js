@@ -9,7 +9,7 @@ const Header = props => {
  
  
   return (
-    <div className="bg-white header-part">
+    <div className="bg-white header-part header">
      
       <Navbar color="light" light={true} expand="lg" className="bg-white p-sm-0">
         <div className="container d-sm-flex d-lg-flex d-xl-flex">
@@ -20,7 +20,7 @@ const Header = props => {
           <Collapse isOpen={isOpen} navbar className="text-center text-lg-left">
             <Nav className="mr-0 ml-auto pb-2" navbar style={{fontSize:'14px'}}>
               <NavItem>
-                <Link to="#" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color: "#000" }}>
+                <Link to="/" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color: "#000" }}>
                   Home
                 </Link>
               </NavItem>
@@ -64,7 +64,7 @@ const Header = props => {
               </UncontrolledDropdown>
               
               <NavItem className="ml-4">
-                <Link to="/reviews/" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color:'#000000' }}>
+                <Link to="/contact-us/" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color:'#000000' }}>
                   Contact Us
                 </Link>
               </NavItem>
