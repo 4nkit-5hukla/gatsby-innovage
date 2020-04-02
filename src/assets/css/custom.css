@@ -245,7 +245,12 @@ body .bottom-content .btn:focus {
 }
 .home-banner{
 	width:100%;
-	background-color:#9bc53d;
+	/*background-color:#9bc53d;*/
+	background-image:url('../img/tech.jpg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:cover;
+	background-position:center center;
 }
 /*end our -services*/
 /*web-hosting*/
@@ -334,6 +339,9 @@ body .medium {
 	max-height: 400px;
 	height: 350px;
 	position: relative;
+}
+.home-banner .layer{
+	background-color:rgba(0,0,0,0.7);
 }
 .layer{
 	width:100%;

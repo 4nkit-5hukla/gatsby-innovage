@@ -5,10 +5,10 @@ import Footer from "../components/footer"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import clock from "../assets/img/clock.png"
-import math from "../assets/img/math.png"
-import book from "../assets/img/book.png"
-import calc from "../assets/img/calculator.png"
+import w_clock from "../assets/img/w-clock.png"
+import w_math from "../assets/img/w-math.png"
+import w_book from "../assets/img/w-book.png"
+import w_test from "../assets/img/w-test.png"
 import mobile from "../assets/img/mobile.png"
 import imac from "../assets/img/imac.png"
 import search from "../assets/img/search.png"
@@ -29,8 +29,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <section>
-        <div className="home-banner py-5">
-            <Container>
+        <div className="home-banner position-relative">
+         <div className="layer position-absolute w-100 h-100">  </div>
+            <Container className="py-5">
                 <Row className="text-center text-white d-block banner-title">
                     <Col className="col-sm-12 col-lg-9 m-auto">
                       <h1 className="PO-R mb-3">TECHNOLOGY . INNOVATION . DELIVERED</h1>
@@ -43,17 +44,17 @@ const IndexPage = () => (
                     <Col className="col-sm-12 col-lg-4 text-left text-lg-right pt-3 pt-sm-0 pt-lg-3">
                         <div className="our-feat">
                             <div className="banner-icon">
-                                  <img className="img-fluid" src={clock} alt="Clock" />
+                                  <img className="img-fluid" src={w_clock} alt="Clock" />
                             </div>
                             <h3 className="PO-R text-white mt-4 mb-3">ONLINE EXAMINER</h3>
-                            <p className="MT-R text-dark">Create Question bank and create your own tests – print them for in-class usage or administer online. Track student performance</p>
+                            <p className="MT-R text-white">Create Question bank and create your own tests – print them for in-class usage or administer online. Track student performance</p>
                         </div>
                         <div className="our-feat mt-5">
                             <div className="banner-icon">
-                                  <img className="img-fluid" src={math} alt="Math" />
+                                  <img className="img-fluid" src={w_math} alt="Math" />
                             </div>
                             <h3 className="PO-R text-white mt-4 mb-3">INDIA TESTS</h3>
-                            <p className="MT-R text-dark">Ever growing tests for students to practice tests for IBPS PO, IBPS Clerk, CAT and CLAT. Monthly and Yearly subscription available</p>
+                            <p className="MT-R text-white">Ever growing tests for students to practice tests for IBPS PO, IBPS Clerk, CAT and CLAT. Monthly and Yearly subscription available</p>
                         </div>
                     </Col>
                     <Col className="col-12 col-sm-12 col-lg-4">
@@ -64,21 +65,22 @@ const IndexPage = () => (
                     <Col className="col-sm-12 col-lg-4 pt-3 pt-sm-0 pt-lg-3">
                         <div className="our-feat">
                             <div className="banner-icon">
-                                  <img className="img-fluid" src={calc} alt="Management" />
+                                  <img className="img-fluid" src={w_test} alt="Management" />
                             </div>
                             <h3 className="PO-R text-white mt-4 mb-3">SCHOOL MANAGEMENT SYSTEM</h3>
-                            <p className="MT-R text-dark">Organize and access online all your school systems anytime, anywhere at reasonable rate. Parents and student portal included.</p>
+                            <p className="MT-R text-white">Organize and access online all your school systems anytime, anywhere at reasonable rate. Parents and student portal included.</p>
                         </div>
                         <div className="our-feat mt-5">
                             <div className="banner-icon">
-                                  <img className="img-fluid" src={book} alt="LMS" />
+                                  <img className="img-fluid" src={w_book} alt="LMS" />
                             </div>
                             <h3 className="PO-R text-white mt-4 mb-3">LMS</h3>
-                            <p className="MT-R text-dark">Our Learning Management Solution includes Online Lessons, Courses, Assignment, Worksheets, Tests and other modules which will help achieve your goals</p>
+                            <p className="MT-R text-white">Our Learning Management Solution includes Online Lessons, Courses, Assignment, Worksheets, Tests and other modules which will help achieve your goals</p>
                         </div>
                     </Col>
                 </Row>
             </Container>
+          
         </div>
     </section>
     <section className="wow fadeIn py-5 our-services">
