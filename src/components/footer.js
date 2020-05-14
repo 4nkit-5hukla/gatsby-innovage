@@ -1,55 +1,48 @@
 import React from "react"
 import {Link} from "gatsby"
 import {Container, Row, Col} from 'reactstrap';
-
+import logo from "../assets/img/logo.png";
 
 const Footer = props => {
   return (
-	<footer className="footer py-5" style={{ backgroundColor: '#1c1c1c', borderRadius: '0', color: '#fff' }}>
-		<Container>
-			<Row>
-				<Col className="col-12 col-md-6 col-lg-3 col-xl-3">
-					<div className="" style={{color:'#939393'}}>
-						<h4>ABOUT US</h4>
-						<p className="MT-R" style={{fontSize:'12px'}}>
-							Innovage Softwares was founded in 2005 with the goal to provide learning solutions to our customers with an eye on future. Innovage Softwares Inc. has expert in design and creation of learning solutions in several formats and systems.
-						</p>
-					</div>
-				</Col>
-				<Col className="col-12 col-md-6 col-lg-3 col-xl-3 pl-sm-3 pl-md-3 pl-lg-4">
-					<div className="" style={{color:'#939393'}}>
-						<h4>SERVICES</h4>
-						<ul className="px-0 m-0 list-unstyled footer-links">
-							<li><Link to="/web-hosting/" className="position-relative">Web Hosting</Link></li>
-							<li><Link to="/web-designing/" className="position-relative">Web Designing</Link></li>
-							<li><Link to="/customized-software/" className="position-relative">Customized Software</Link></li>
-							<li><Link to="/seo-and-sem/" className="position-relative">SEO AND SEM</Link></li>
-						</ul>
-					</div>
-				</Col>
-				<Col className="col-12 col-md-6 col-lg-3 col-xl-3 pl-sm-3 pl-md-3 pl-lg-4">
-					<div className="" style={{color:'#939393'}}>
-						<h4>SOLUTIONS</h4>
-						<ul className="px-0 m-0 list-unstyled footer-links">
-							<li><Link to="/for-school/" className="position-relative">For Schools</Link></li>
-							<li><Link to="/for-coachings/" className="position-relative">For Coachings</Link></li>
-							<li><Link to="/for-corporate/" className="position-relative">For Corporate</Link></li>
-							<li><Link to="/for-students/" className="position-relative">For Students</Link></li>
-						</ul>
-					</div>
-				</Col>
-				<Col className="col-12 col-md-6 col-lg-3 col-xl-3 pl-sm-3 pl-md-3 pl-lg-4">
-					<div className="footer-contact" style={{color:'#939393'}}>
-						<h4>EMAIL US</h4>
-						<a href="mailto:enquiry@innovagesoftwares.com">enquiry@innovagesoftwares.com</a>
-
-						<h4 className="mt-4 mb-2">CALL US</h4>
-						<a href="tel:(91) 7379-505-684">(91) 7379-505-684</a>
-					</div>
-				</Col>
-			</Row>
-		</Container>
-	</footer>
+	<footer className="footer-strip-dark bg-extra-dark-gray padding-90px-tb lg-padding-70px-tb md-padding-50px-tb sm-padding-40px-tb">
+            <div className="container">
+                <div className="row align-items-center sm-text-center">
+                    <div className="col-md-8 col-12 sm-margin-30px-bottom">
+                        <h5 className="text-white margin-5px-bottom">Let's make something great together</h5>
+                        <span className="text-color-2 text-medium">Get in touch with us and send some basic info for a quick quote</span>
+                    </div>
+                    <div className="col-md-4 col-12 text-md-right text-sm-center">
+                        <span className="text-extra-large text-extra-dark-gray text-light-gray d-inline-block sm-d-block"><a  href="" className="btn btn-large btn-transparent-white d-table d-lg-inline-block md-margin-lr-auto">Start a project</a></span>
+                    </div> 
+                </div>
+                <div className="border-top border-color-medium-dark-gray padding-80px-top margin-80px-top lg-padding-60px-top lg-margin-60px-top md-padding-50px-top md-margin-50px-top sm-padding-40px-top sm-margin-40px-top">
+                    <div className="row align-items-center">
+                        <div className="col-lg-3 col-md-12 md-text-center md-margin-50px-bottom sm-margin-30px-bottom">
+                            <a href="/"><img className="footer-logo" src={logo} data-rjs="images/logo-white@2x.png" alt="Pofo"/></a>
+                        </div> 
+                        <div className="text-color-2 col-lg-4 col-md-5 col-12 sm-margin-30px-bottom text-medium sm-text-center">
+                            301 The Greenhouse,<br/>
+                            Custard Factory, London, E2 8DY.
+                        </div>
+                        <div className="text-color-2 col-lg-3 col-md-4 col-12 sm-margin-30px-bottom text-medium sm-text-center">
+                            +44 (0) 123 456 7890<br/>
+                            <a href="mailto:sales@domain.com">sales@domain.com</a>
+                        </div>
+                        <div className="col-lg-2 col-md-3 text-md-right sm-text-center">
+                            <div className="social-icon-style-8 d-inline-block vertical-align-middle">
+                                <ul className="small-icon mb-0">
+                                    <li><a className="facebook text-white-2" href="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook"></i></a></li>
+                                    <li><a className="twitter text-white-2" href="https://twitter.com/" target="_blank"><i className="fa fa-twitter"></i></a></li>
+                                    <li><a className="google_icon text-white-2" href="https://plus.google.com" target="_blank"><i className="fa fa-google-plus"></i></a></li>
+                                    <li><a className="instagram text-white-2" href="https://instagram.com/" target="_blank"><i className="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
   )
 }
 

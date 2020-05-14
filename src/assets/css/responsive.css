@@ -2,4 +2,20 @@
 .navbar-brand {
     width: 200px;
 }
+body .navbar-expand-lg .navbar-nav .dropdown-menu {
+	position: unset;
+	
+}
+body .banner-data {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+body .home-banner h1 {
+	font-size: 24px;
+}
+body .home-slider {
+	height: 400px;
+}
 }

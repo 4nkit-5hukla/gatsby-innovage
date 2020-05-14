@@ -1,350 +1,334 @@
 import React from "react"
-import {Container, Row, Col} from 'reactstrap';
-import { Link } from "gatsby"
+import { Container, Row, Col } from "reactstrap"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Footer from "../components/footer"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import w_clock from "../assets/img/w-clock.png"
-import w_math from "../assets/img/w-math.png"
-import w_book from "../assets/img/w-book.png"
-import w_test from "../assets/img/w-test.png"
-import mobile from "../assets/img/mobile.png"
-import imac from "../assets/img/imac.png"
-import search from "../assets/img/search.png"
-import language from "../assets/img/language.png"
-import school from "../assets/img/school.png"
-import teacher from "../assets/img/teacher.png"
-import student from "../assets/img/student.png"
-import ca from "../assets/img/ca.jpg"
-import ro from "../assets/img/ro.jpg"
-import maulana from "../assets/img/maulana.jpg"
-import aid from "../assets/img/aid.jpg"
-import spark from "../assets/img/spark.jpg"
-import social from "../assets/img/social.jpg"
-import desk from "../assets/img/desktop.png"
+import laptop from "../assets/img/laptop.png"
+import post1 from "../assets/img/post1.jpg"
+import post2 from "../assets/img/post2.jpg"
+import post3 from "../assets/img/post3.jpg"
+import post4 from "../assets/img/post4.jpg"
+import HomeBannerSlider from "../components/HomeBannerSlider"
+import RecentHomeBlogs from "../components/RecentHomeBlog"
 
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <section>
-        <div className="home-banner position-relative">
-         <div className="layer position-absolute w-100 h-100">  </div>
-            <Container className="py-5">
-                <Row className="text-center text-white d-block banner-title">
-                    <Col className="col-sm-12 col-lg-9 m-auto">
-                      <h1 className="PO-R mb-3">TECHNOLOGY . INNOVATION . DELIVERED</h1>
-                      <p className="PO-R">
-                          Enabling businesses to get competitive edge in the markets by building scalable and extensible softwares and mobile applications 
-                      </p>
-                    </Col>
-                </Row>
-                <Row className="pt-4">
-                    <Col className="col-sm-12 col-lg-4 text-left text-lg-right pt-3 pt-sm-0 pt-lg-3">
-                        <div className="our-feat">
-                            <div className="banner-icon">
-                                  <img className="img-fluid" src={w_clock} alt="Clock" />
-                            </div>
-                            <h3 className="PO-R text-white mt-4 mb-3">ONLINE EXAMINER</h3>
-                            <p className="MT-R text-white">Create Question bank and create your own tests – print them for in-class usage or administer online. Track student performance</p>
-                        </div>
-                        <div className="our-feat mt-5">
-                            <div className="banner-icon">
-                                  <img className="img-fluid" src={w_math} alt="Math" />
-                            </div>
-                            <h3 className="PO-R text-white mt-4 mb-3">INDIA TESTS</h3>
-                            <p className="MT-R text-white">Ever growing tests for students to practice tests for IBPS PO, IBPS Clerk, CAT and CLAT. Monthly and Yearly subscription available</p>
-                        </div>
-                    </Col>
-                    <Col className="col-12 col-sm-12 col-lg-4">
-                        <div className="mobile-device text-center m-auto">
-                            <img className="img-fluid" src={mobile} alt="Mobile Device" />
-                        </div>
-                    </Col>
-                    <Col className="col-sm-12 col-lg-4 pt-3 pt-sm-0 pt-lg-3">
-                        <div className="our-feat">
-                            <div className="banner-icon">
-                                  <img className="img-fluid" src={w_test} alt="Management" />
-                            </div>
-                            <h3 className="PO-R text-white mt-4 mb-3">SCHOOL MANAGEMENT SYSTEM</h3>
-                            <p className="MT-R text-white">Organize and access online all your school systems anytime, anywhere at reasonable rate. Parents and student portal included.</p>
-                        </div>
-                        <div className="our-feat mt-5">
-                            <div className="banner-icon">
-                                  <img className="img-fluid" src={w_book} alt="LMS" />
-                            </div>
-                            <h3 className="PO-R text-white mt-4 mb-3">LMS</h3>
-                            <p className="MT-R text-white">Our Learning Management Solution includes Online Lessons, Courses, Assignment, Worksheets, Tests and other modules which will help achieve your goals</p>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-          
-        </div>
-    </section>
-    <section className="wow fadeIn py-5 our-services">
-          <Container>
-              <Row>
-                  <Col className="col-sm-12 col-lg-9 m-auto text-center">
-                      <h2 className="PO-R mb-3">OUR SERVICES</h2>
-                      <span className="hr-line"></span>
-                    </Col>
-              </Row>
-              <Row className="pt-5 pt-sm-3 pt-lg-5">
-                  <Col className="col-12 col-sm-12 col-lg-4 text-center mb-3 mb-lg-0">
-                      <div className="our-service-content">
-                          <div className="top-content text-center">
-                              <div className="service-image">
-                                    <img className="img-fluid" src={language} alt="" />
-                              </div>
-                              <div className="service-content">
-                                  <p className="MT-R">We provide the best development of responsive websites that adapt themselves to the mode through which they are accessed.</p>
-                              </div>
-                          </div>
-                          <div className="bottom-content text-center">
-                              <h4 className="m-0 p-3">WEBSITE DEVELOPMENT</h4>
-                              <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                          </div>
-                      </div>
-                  </Col>
-                  <Col className="col-12 col-sm-12 col-lg-4 text-center mb-3 mb-lg-0">
-                      <div className="our-service-content">
-                          <div className="top-content text-center">
-                              <div className="service-image">
-                                    <img className="img-fluid" src={search} alt="" />
-                              </div>
-                              <div className="service-content">
-                                  <p className="MT-R">We manage your website ranking by using methods like cross linking,  URL normalization, 301 redirects, sending ads and building brand awareness.</p>
-                              </div>
-                          </div>
-                          <div className="bottom-content text-center">
-                              <h4 className="m-0 p-3">SEO AND SEM</h4>
-                              <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                          </div>
-                      </div>
-                  </Col>
-                  <Col className="col-12 col-sm-12 col-lg-4 text-center mb-3 mb-lg-0">
-                      <div className="our-service-content">
-                          <div className="top-content text-center">
-                              <div className="service-image">
-                                  <img className="img-fluid" src={imac} alt="" />
-                              </div>
-                              <div className="service-content">
-                                  <p className="MT-R">We offer customized software solutions for organizations with comprehensive packages that are innovative, cost-effective and efficient.</p>
-                              </div>
-                          </div>
-                          <div className="bottom-content text-center">
-                              <h4 className="m-0 p-3">CUSTOMIZED SOFTWARE DEVELOPMENT</h4>
-                              <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                          </div>
-                      </div>
-                  </Col>
-              </Row>
-          </Container>  
-    </section>
-    <section>
-        <div className="jumbotron contact-short-sec mb-0">
-            <Container>
-                <Row>
-                    <Col className="col-12 col-md-8 text-center text-md-left PO-R short-contact">
-                        <p className="mb-0">CALL US ON <a href="tel:(+91) 7379-505-684" className="text-decoration-none">(+91) 7379-505-684</a> </p> OR
-                         <p className="mb-0">E-MAIL AT <a href="mailto:ENQUIRY@INNOVAGESOFTWARES.COM" className="text-decoration-none">ENQUIRY@INNOVAGESOFTWARES.COM</a></p>
-                    </Col>
-                    <Col className="col-12 col-md-4 text-center text-md-right">
-                        <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Contact Us</Link>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    </section>
-    <section className="our-solutions py-5">
-        <Container>
-             <Row>
-                  <Col className="col-sm-12 col-lg-9 m-auto text-center">
-                      <h2 className="PO-R mb-3 text-white">OUR SOLUTIONS</h2>
-                      <span className="hr-line"></span>
-                    </Col>
-              </Row>
-              <Row className="pt-3 pt-lg-5 our-solutions-content">
-                    <div className="col-12 col-lg-4 fadeInRight mb-4 mb-lg-0">
-                        <div className="py-4 px-3 bg-white box-shadow text-center eq-height">
-                            <div className="our-solutions-icon bg-light-gray">
-                                <div className="ic">
-                                    <img className="img-fluid" src={school} alt="" className="mb-0"/>
-                                </div>
-                            </div>
-                            <div className="mt-5 text-medium-gray text-uppercase">
-                                <h4 className="MT-R">FOR SCHOOLS</h4>
-                            </div>
-                            <p className="MT-R">Innovage School Management System is a comprehensive school management software, designed particularly for small and medium schools designed to automate school’s different day to day tasks, making them fast….</p>
-                            <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                        </div>                    
+const IndexPage = data => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(slug: { eq: "home" }) {
+          title
+          template
+          status
+          content
+          acf {
+            thin_title
+            bold_title
+            description
+            grid_1_description
+            grid_1_icon
+            grid_1_title
+            grid_2_description
+            grid_2_icon
+            grid_2_title
+            section_3_title
+            section_3_description
+            left_title
+            left_content
+            right_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  console.log(wordpressPage)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <section className="p-0">
+        <HomeBannerSlider />
+      </section>
+      <section className="wow fadeIn cover-background md-no-background-img bg-image bg-medium-light-gray build-perfect-web">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-6 offset-lg-6 wow fadeIn">
+              <div className="row m-0">
+                <div className="col-12 text-center text-lg-left sm-no-padding-lr last-paragraph-no-margin margin-60px-bottom md-margin-30px-bottom">
+                  <span className="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">
+                    {wordpressPage.acf.thin_title}
+                  </span>
+                  <h3 className="h-3 alt-font text-extra-dark-gray font-weight-600">
+                    {wordpressPage.acf.bold_title}
+                  </h3>
+                  <p
+                    className="width-90 md-width-100"
+                    dangerouslySetInnerHTML={{
+                      __html: wordpressPage.acf.description,
+                    }}
+                  ></p>
+                </div>
+                <div className="col-12 col-md-6 sm-margin-30px-bottom last-paragraph-no-margin sm-no-padding-lr text-center text-lg-left">
+                  <i
+                    dangerouslySetInnerHTML={{
+                      __html: wordpressPage.acf.grid_1_icon,
+                    }}
+                  ></i>
+                  <div className="feature-content">
+                    <div className="alt-font font-weight-600 text-extra-dark-gray margin-5px-bottom">
+                      {wordpressPage.acf.grid_1_title}
                     </div>
-                    <div className="col-12 col-lg-4 fadeInRight mb-4 mb-lg-0" data-wow-delay="0.2s">
-                        <div className="py-4 px-3 bg-white box-shadow text-center eq-height">
-                            <div className="our-solutions-icon bg-light-gray">
-                                <div className="ic">
-                                    <img className="img-fluid" src={teacher} alt="" className="mb-0"/>
-                                </div>
-                            </div>
-                            <div className="mt-5 text-medium-gray text-uppercase">
-                                <h4 className="MT-R">FOR COACHINGS</h4>
-                            </div>
-                            <p className="MT-R">Online Examination System which can be used by coaching institutes, tuition centers and individual teachers. You can manage your students, batches, conduct online exams and assess their performance through various reports.</p>
-                            <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                        </div>                    
-                    </div>
-                    <div className="col-12 col-lg-4 fadeInRight mb-4 mb-lg-0" data-wow-delay="0.4s">
-                        <div className="py-4 px-3 bg-white box-shadow text-center eq-height">
-                            <div className="our-solutions-icon bg-light-gray">
-                                <div className="ic">
-                                    <img className="img-fluid" src={student} alt="" className="mb-0"/>
-                                </div>
-                            </div>
-                            <div className="mt-5 text-medium-gray text-uppercase">
-                                <h4 className="MT-R">FOR STUDENTS</h4>
-                            </div>
-                            <p className="MT-R">If you are preparing for competitive exams like BANK PO, CLERK, SSC or for entrance exams like CLAT and CAT, you can take mock tests, attempt model and previous year papers on our educational partner website IndiaTests. Try it now!!</p>
-                            <Link to="" className="MT-R btn border-radius-4 margin-30px-top">Know More</Link>
-                        </div>                    
-                    </div>
-               </Row>
-        </Container>
-    </section>
-    <section className="py-5">
-            <Container>
-                <Row>
-                  <Col className="col-sm-12 col-lg-9 m-auto text-center">
-                      <h2 className="PO-R mb-3"> We build beautiful websites for you </h2>
-                      <span className="hr-line"></span>
-                  </Col>
-                </Row>
-                <Row className="pt-5">
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                        <img className="img-fluid" src={ca} alt="" className="mb-0"/>
-                        <div className="feature-box-content text-center">
-                            <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                            <div className="px-3 d-table h-100 w-100 position-relative">
-                                <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                    <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                           Central Academy
-                                     </div> 
-                                    <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                </div>
-                            </div>
-                        </div>
-                       </div>
-                    </div>
-                   
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                            <img className="img-fluid" src={aid} alt="" className="mb-0"/>
-                            <div className="feature-box-content text-center text-white-2">
-                                <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                                <div className="px-3 d-table h-100 w-100 position-relative">
-                                    <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                        <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                            Archit Infradesign
-                                          </div> 
-                                        <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                            <img className="img-fluid" src={spark} alt="" className="mb-0"/>
-                            <div className="feature-box-content text-center text-white-2">
-                                <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                                <div className="px-3 d-table h-100 w-100 position-relative">
-                                    <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                        <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                            SPARK
-                                        </div> 
-                                        <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                            <img className="img-fluid" src={social} alt="" className="mb-0"/>
-                            <div className="feature-box-content text-center">
-                                <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                                <div className="px-3 d-table h-100 w-100 position-relative">
-                                    <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                        <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                            Social Justices & Women…
-                                          </div> 
-                                        <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                   
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                            <img className="img-fluid" src={ro} alt="" className="mb-0"/>
-                            <div className="feature-box-content text-center text-white-2">
-                                <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                                <div className="px-3 d-table h-100 w-100 position-relative">
-                                    <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                        <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                           Indian RO
-                                        </div> 
-                                        <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div className="col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="feature-box-16 sm-width-100">
-                            <img className="img-fluid" src={maulana} alt="" className="mb-0"/>
-                            <div className="feature-box-content text-center text-white-2">
-                                <div className="opacity-full-dark bg-extra-dark-gray"></div>
-                                <div className="px-3 d-table h-100 w-100 position-relative">
-                                    <div className="align-middle d-table-cell padding-15px-lr padding-20px-tb">
-                                        <div className="text-white-2 alt-font text-medium margin-15px-bottom text-white p-3 PO-R font-weight-bold">
-                                            Maulana Azad PG College
-                                        </div> 
-                                        <p className="width-85 mx-auto text-white MT-R">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-          
-                </Row> 
-            </Container>
-        </section>
-        <section className="responsive-desk parallax py-5" data-stellar-background-ratio="0.6">
-            <Container className="py-5 py-sm-0 py-md-0 py-lg-5">
-              <div className="opacity-medium bg-extra-dark-gray"></div>
-              <div className="container-fluid position-relative">
-                  <div className="row align-items-center"> 
-                      <div className="col-12 col-lg-6 text-center md-margin-50px-bottom sm-margin-30px-bottom wow fadeIn">
-                          <img className="img-fluid" src={desk} alt="" className="mb-0"/>
-                      </div> 
-                      <div className="col-12 col-lg-6 wow fadeIn" data-wow-delay="0.2s">
-                          <div className="width-75 lg-width-100 padding-three-lr sm-no-padding-lr">
-                              <h2 className="PO-R">Choose a template and let us design a website for you</h2>
-                              <Link to="" className="MT-R btn border-radius-4 margin-30px-top p-3">GET STARTED</Link>
-                          </div>
-                      </div> 
+                    <p
+                      className="width-80 lg-width-90 md-width-100"
+                      dangerouslySetInnerHTML={{
+                        __html: wordpressPage.acf.grid_1_description,
+                      }}
+                    ></p>
                   </div>
+                </div>
+                <div className="col-12 col-md-6 last-paragraph-no-margin sm-no-padding-lr text-center text-lg-left">
+                  <i
+                    dangerouslySetInnerHTML={{
+                      __html: wordpressPage.acf.grid_2_icon,
+                    }}
+                  ></i>
+                  <div className="feature-content">
+                    <div className="alt-font font-weight-600 text-extra-dark-gray margin-5px-bottom">
+                      {wordpressPage.acf.grid_2_title}
+                    </div>
+                    <p
+                      className="width-80 lg-width-90 md-width-100"
+                      dangerouslySetInnerHTML={{
+                        __html: wordpressPage.acf.grid_2_description,
+                      }}
+                    ></p>
+                  </div>
+                </div>
               </div>
-            </Container>
-        </section>
-   
-  </Layout>
-)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="wow fadeIn">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 margin-eight-bottom text-center last-paragraph-no-margin">
+              <h3 className="h-3 alt-font text-extra-dark-gray font-weight-600">
+                {wordpressPage.acf.section_3_title}
+              </h3>
+              <p
+                className="width-80 d-inline-block sm-width-100"
+                dangerouslySetInnerHTML={{
+                  __html: wordpressPage.acf.section_3_description,
+                }}
+              ></p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 col-lg-3 col-md-6 md-margin-four-bottom sm-margin-30px-bottom wow fadeInUp last-paragraph-no-margin">
+              <div className="bg-white border-color-extra-medium-gray border text-center padding-eighteen-tb border-radius-4 position-relative h-100">
+                <div className="d-inline-block margin-20px-bottom">
+                  <i className="icon-tools text-white-2 icon-round-small bg-deep-pink"></i>
+                </div>
+                <div className="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom">
+                  Pixel Perfect Design
+                </div>
+                <p className="width-75 mx-auto">
+                  Lorem Ipsum is simply text of the printing and typesetting
+                  industry. Lorem Ipsum has been standard dummy.
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-12 col-lg-3 col-md-6 md-margin-four-bottom sm-margin-30px-bottom wow fadeInUp last-paragraph-no-margin"
+              data-wow-delay="0.2s"
+            >
+              <div className="bg-white border-color-extra-medium-gray border text-center padding-eighteen-tb border-radius-4 position-relative h-100">
+                <div className="d-inline-block margin-20px-bottom">
+                  <i className="icon-layers text-white-2 icon-round-small bg-deep-pink"></i>
+                </div>
+                <div className="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom">
+                  Full Documentation
+                </div>
+                <p className="width-75 mx-auto">
+                  Lorem Ipsum is simply text of the printing and typesetting
+                  industry. Lorem Ipsum has been standard dummy.
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-12 col-lg-3 col-md-6 sm-margin-30px-bottom wow fadeInUp last-paragraph-no-margin"
+              data-wow-delay="0.4s"
+            >
+              <div className="bg-white border-color-extra-medium-gray border text-center padding-eighteen-tb border-radius-4 position-relative h-100">
+                <div className="d-inline-block margin-20px-bottom">
+                  <i className="icon-scissors text-white-2 icon-round-small bg-deep-pink"></i>
+                </div>
+                <div className="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom">
+                  Reasonable Pricing
+                </div>
+                <p className="width-75 mx-auto">
+                  Lorem Ipsum is simply text of the printing and typesetting
+                  industry. Lorem Ipsum has been standard dummy.
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-12 col-lg-3 col-md-6 wow fadeInUp last-paragraph-no-margin"
+              data-wow-delay="0.6s"
+            >
+              <div className="bg-white border-color-extra-medium-gray border text-center padding-eighteen-tb border-radius-4 position-relative h-100">
+                <div className="d-inline-block margin-20px-bottom">
+                  <i className="icon-lock text-white-2 icon-round-small bg-deep-pink"></i>
+                </div>
+                <div className="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom">
+                  User-friendly Admin
+                </div>
+                <p className="width-75 mx-auto">
+                  Lorem Ipsum is simply text of the printing and typesetting
+                  industry. Lorem Ipsum has been standard dummy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="p-0 wow fadeIn">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-lg-3 p-0 cover-background position-relative md-height-500px sm-height-300px wow fadeIn left-img"></div>
+            <div
+              className="col-12 col-lg-3 p-0 d-flex align-items-center position-relative bg-extra-dark-gray text-center text-lg-left wow fadeIn"
+              data-wow-delay="0.2s"
+            >
+              <div className="padding-fifteen-all lg-padding-ten-all sm-padding-30px-all width-100">
+                <div className="alt-font text-medium-gray margin-10px-bottom">
+                  Build perfect websites
+                </div>
+                <div className="alt-font text-extra-large margin-20px-bottom text-white-2 width-90 lg-width-100 sm-margin-15px-bottom">
+                  Unlimited power and customization possibilities
+                </div>
+                <p className="text-color-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since. Lorem Ipsum has been the
+                  industry's standard dummy text ever since. Lorem Ipsum is
+                  simply dummy text.
+                </p>
+                <a
+                  href=""
+                  className="btn btn-transparent-white btn-small border-radius-4"
+                >
+                  <i
+                    className="fa fa-play-circle icon-very-small margin-5px-right ml-0"
+                    aria-hidden="true"
+                  ></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+            <div
+              className="col-12 col-lg-3 p-0 cover-background position-relative md-height-500px sm-height-300px wow fadeIn right-img"
+              data-wow-delay="0.4s"
+            ></div>
+            <div
+              className="col-12 col-lg-3 p-0 d-flex align-items-center position-relative bg-extra-dark-gray text-center text-lg-left wow fadeIn"
+              data-wow-delay="0.6s"
+            >
+              <div className="padding-fifteen-all lg-padding-ten-all sm-padding-30px-all width-100">
+                <div className="alt-font text-medium-gray margin-10px-bottom">
+                  Unique digital experiences
+                </div>
+                <div className="alt-font text-extra-large margin-20px-bottom text-white-2 width-90 lg-width-100 sm-margin-15px-bottom">
+                  Pixel perfect design and clear code delivered to you
+                </div>
+                <p className="text-color-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since. Lorem Ipsum has been the
+                  industry's standard dummy text ever since. Lorem Ipsum is
+                  simply dummy text.
+                </p>
+                <a
+                  href=""
+                  className="btn btn-transparent-white btn-small border-radius-4"
+                >
+                  <i
+                    className="fa fa-play-circle icon-very-small margin-5px-right ml-0"
+                    aria-hidden="true"
+                  ></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="wow fadeIn">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-5 md-margin-50px-bottom">
+              <h3 className="h-3 alt-font text-extra-dark-gray font-weight-600">
+                {wordpressPage.acf.left_title}
+              </h3>
+              <div
+                className="left-list"
+                dangerouslySetInnerHTML={{
+                  __html: wordpressPage.acf.left_content,
+                }}
+              ></div>
+              <a
+                href="home-classic-digital-agency.html"
+                className="btn btn-dark-gray btn-small text-extra-small border-radius-4 margin-20px-top"
+              >
+                <i
+                  className="fas fa-play-circle icon-very-small margin-5px-right no-margin-left"
+                  aria-hidden="true"
+                ></i>{" "}
+                ALL advantages
+              </a>
+            </div>
+            <div className="col-12 col-lg-7 text-center">
+              <img
+                src={
+                  wordpressPage.acf.right_image.localFile.childImageSharp.fluid
+                    .src
+                }
+                alt=""
+                className="w-100"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="border-top border-color-extra-light-gray wow fadeIn">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <p className="alt-font margin-5px-bottom text-uppercase text-small text-medium-gray">
+                Publish what you think
+              </p>
+              <h3 className="h-3 text-uppercase alt-font text-extra-dark-gray margin-10px-top margin-20px-bottom font-weight-700 md-width-100 sm-width-100">
+                Latest Blogs
+              </h3>
+              <span className="separator-line-horizontal-medium-light2 bg-deep-pink d-table mx-auto width-100px"></span>
+            </div>
+          </div>
+          <div className=""></div>
+          <RecentHomeBlogs />
+        </div>
+      </section>
+    </Layout>
+  )
+}
 
 export default IndexPage

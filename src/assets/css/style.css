@@ -298,7 +298,7 @@ label { margin-bottom: 5px; font-weight: 700; }
 
 .extra-small-input, .extra-small-textarea, .extra-small-select select { padding: 9px 17px; font-size: 12px; line-height: normal}
 
-.select-style { width: 100%; overflow: hidden; background: url("../images/select-arrow.png") no-repeat 97% 50%; border: 1px solid #d1d1d1; margin-bottom: 20px }
+.select-style { width: 100%; overflow: hidden; background:no-repeat 97% 50%; border: 1px solid #d1d1d1; margin-bottom: 20px }
 .select-style select { width: 100%; border: none; box-shadow: none; background-color: transparent; background-image: none; -webkit-appearance: none; -moz-appearance: none; appearance: none;  cursor: pointer; }
 .select-style select:focus { outline: none; border: none; box-shadow: none }
 
@@ -2604,7 +2604,7 @@ nav.navbar.sidebar-nav .navbar-left-sidebar li.dropdown .third-level a > [class^
 
 /* pull left sidebar */
 .cbp-spmenu {background: #fff; position: fixed; z-index: 1;}
-.cbp-spmenu-vertical {width: 455px;height: 100%;top: 0;	z-index: 10005;}
+.cbp-spmenu-vertical {width: 455px;height: 100%;top: 0; z-index: 10005;}
 .cbp-spmenu-right {right: -455px;}
 .cbp-spmenu-left {left: -100%;}
 .cbp-spmenu-left.cbp-spmenu-open {left: 0;}
@@ -3830,7 +3830,7 @@ aside .latest-post li figure {width: 75px;}
 
 /* services modern */
 .arrow-bottom{position: relative;}
-.arrow-bottom:after {top: 100%;	left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-top-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
+.arrow-bottom:after {top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-top-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
 .arrow-top{position: relative;}
 .arrow-top:after{top: -29px; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-bottom-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
 
@@ -3841,8 +3841,8 @@ aside .latest-post li figure {width: 75px;}
 
 /* sidebar nav style 2 */
 .tparrows:before { font-family: "Font Awesome 5 Free"; font-weight: 700; }
-.tparrows.tp-leftarrow:before	{content: '\f060'; }
-.tparrows.tp-rightarrow:before	{content: '\f061'; }
+.tparrows.tp-leftarrow:before   {content: '\f060'; }
+.tparrows.tp-rightarrow:before  {content: '\f061'; }
 
 /* rev slider */
 .rev_slider_wrapper { height: 980px;}

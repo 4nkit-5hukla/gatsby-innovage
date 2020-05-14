@@ -9,9 +9,9 @@ const Header = props => {
  
  
   return (
-    <div className="bg-white header-part header">
+    <div className="bg-transparent header-part header position-absolute w-100">
      
-      <Navbar color="light" light={true} expand="lg" className="bg-white p-sm-0">
+      <Navbar color="" light={true} expand="lg" className="p-sm-0">
         <div className="container d-sm-flex d-lg-flex d-xl-flex">
           <Link to="/" className="navbar-brand">
             <img src={logo} alt="Chirofoam" width="290px" className="m-0"/>
@@ -20,51 +20,42 @@ const Header = props => {
           <Collapse isOpen={isOpen} navbar className="text-center text-lg-left">
             <Nav className="mr-0 ml-auto pb-2" navbar style={{fontSize:'14px'}}>
               <NavItem>
-                <Link to="/" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color: "#000" }}>
+                <Link to="/" className="text-white space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color: "#000" }}>
                   Home
                 </Link>
               </NavItem>
+              <NavItem className="ml-4">
+                <Link to="/our-clients/" className="text-white space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color:'#000000' }}>
+                  Our Clients
+                </Link>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle caret nav className="space-1 p-sm-0 p-lg-0 p-xl-0 ml-4 MT-R" style={{ color: "#000" }}>
-                  Our Services
+                <DropdownToggle caret nav className="text-white space-1 p-sm-0 p-lg-0 p-xl-0 ml-4 MT-R" style={{ color: "#000" }}>
+                  Website Development
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-menu-center border-0 text-center text-uppercase MT-R" style={{fontSize:'16px'}}>
-                  <Link to="/web-hosting/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                   WEB HOSTING
+                  <Link to="/gatsby-site/" className="text-white nav-link space-1" style={{fontSize:'12px'}}>
+                    Gatsby Site
                   </Link>
-                  <Link to="/web-designing/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    WEB DESIGNING
+                  <Link to="/wordpress-site/" className="text-white nav-link space-1" style={{fontSize:'12px'}}>
+                    Wordpress Site
                   </Link>
-                  <Link to="/customized-software/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    CUSTOMIZED SOFTWARE
+                  <Link to="/shopify-site/" className="text-white nav-link space-1" style={{fontSize:'12px'}}>
+                    Shopify Site
                   </Link>
-                  <Link to="/seo-and-sem/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    SEO AND SEM
-                  </Link>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle caret nav className="space-1 p-sm-0 p-lg-0 p-xl-0 ml-4 MT-R" style={{ color: "#000" }}>
-                  Our Solutions
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-center border-0 text-center text-uppercase MT-R" style={{fontSize:'14px'}}>
-                  <Link to="/for-schools/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    FOR SCHOOLS
-                  </Link>
-                  <Link to="/for-coachings/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    FOR COACHINGS
-                  </Link>
-                  <Link to="/for-corporate/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    FOR CORPORATE
-                  </Link>
-                  <Link to="/for-students/" className="nav-link space-1" style={{fontSize:'12px'}}>
-                    FOR STUDENTS
+                  <Link to="/magento-site/" className="text-white nav-link space-1" style={{fontSize:'12px'}}>
+                    Magento Site
                   </Link>
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <NavItem className="ml-4">
+                <Link to="/blogs/" className="text-white space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R">
+                  Blogs
+                </Link>
+              </NavItem>
               
               <NavItem className="ml-4">
-                <Link to="/contact-us/" className="space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R" style={{ color:'#000000' }}>
+                <Link to="/contact-us/" className="text-white space-1 p-sm-0 p-lg-0 p-xl-0 nav-link MT-R">
                   Contact Us
                 </Link>
               </NavItem>
