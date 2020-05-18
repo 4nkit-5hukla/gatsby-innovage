@@ -43,7 +43,7 @@ module.exports = {
         protocol: "https",
         hostingWPCOM: false,
         useACF: true,
-        verboseOutput: true,
+        verboseOutput: false,
         acfOptionPageIds: [],
       },
     },
