@@ -1,8 +1,13 @@
+const config = require("./config")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `innovagesoftwares`,
     description: `Innovage Softwares`,
     author: `@innovagesoftwares`,
+    isDev: JSON.parse(process.env.isDev),
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,7 +15,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -24,29 +29,42 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: `gatsby-source-graphql`,
       options: {
-        /*
-         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-         * Example : 'demo.wp-api.org' or 'www.example-site.com'
-         */
-        excludedRoutes: [
-          "**/settings",
-          "**/wp/v2/users/me",
-          "**/wp/v2/themes",
-        ],
-        baseUrl: "innovagesoftwares.com/innovage_gatsby",
-        protocol: "https",
-        hostingWPCOM: false,
-        useACF: true,
-        verboseOutput: false,
-        acfOptionPageIds: [],
+        // This type will contain remote schema Query type
+        typeName: `WPGraphQL`,
+        // This is field under which it's accessible
+        fieldName: `wpgraphql`,
+        // Url to query from
+        url: `${config.wordPressUrl}/graphql`,
+        searchAndReplaceContentUrls: {
+          sourceUrl: `${config.wordPressUrl}`,
+          replacementUrl: ``,
+        },
+        // refetch interval in seconds
+        // refetchInterval: 60,
       },
     },
+    // {
+    //   resolve: "gatsby-source-wordpress",
+    //   options: {
+    //     /*
+    //      * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
+    //      * Example : 'demo.wp-api.org' or 'www.example-site.com'
+    //      */
+    //     excludedRoutes: ["**/settings", "**/wp/v2/users/me", "**/wp/v2/themes"],
+    //     baseUrl: "innovagesoftwares.com/innovage_gatsby",
+    //     protocol: "https",
+    //     hostingWPCOM: false,
+    //     useACF: true,
+    //     verboseOutput: false,
+    //     acfOptionPageIds: [],
+    //   },
+    // },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

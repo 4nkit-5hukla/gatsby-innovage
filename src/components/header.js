@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Link } from "gatsby";
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/images/logo.png"
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false)
