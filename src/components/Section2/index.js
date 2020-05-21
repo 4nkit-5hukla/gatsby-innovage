@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from 'react-html-parser'
 
 const Section2 = props => {
-  console.log(props)
   return (
     <section
       className="wow fadeIn cover-background md-no-background-img bg-image bg-medium-light-gray"

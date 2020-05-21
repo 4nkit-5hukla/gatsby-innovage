@@ -47,7 +47,6 @@ const Recentblogs = props => {
       }
     `
   )
-  console.log(props)
   return (
     <section className="border-top border-color-extra-light-gray wow fadeIn">
       <div className="container">

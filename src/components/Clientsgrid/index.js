@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Clientsgrid = props => {
-  console.log(props)
   return (
     <section className="bg-light-gray">
       <div className="container">

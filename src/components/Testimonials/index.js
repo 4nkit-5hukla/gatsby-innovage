@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from 'react-html-parser'
 
 const Testimonials = props => {
-  console.log(props)
   return (
     <section className="wow fadeIn bg-light-gray">
       <div className="container">

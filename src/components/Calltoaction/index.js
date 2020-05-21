@@ -1,7 +1,6 @@
 import React from "react"
 
 const Calltoaction = props => {
-  console.log(props)
   return (
     <section className="wow fadeIn">
       <div className="container">

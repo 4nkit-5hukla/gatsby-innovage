@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from "react-html-parser"
 
 const Servicessection = props => {
-  console.log(props)
   return (
     <section className="bg-extra-dark-gray">
       <div className="container-fluid">

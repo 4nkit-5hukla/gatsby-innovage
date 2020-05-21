@@ -41,6 +41,13 @@ exports.createPages = ({ graphql, actions }) => {
             pageId
           }
         }
+        posts {
+          nodes {
+            uri
+            slug
+            postId
+          }
+        }
       }
     }
   `).then(result => {
@@ -54,6 +61,15 @@ exports.createPages = ({ graphql, actions }) => {
           }
         })
       }
+    })
+    result.data.wpgraphql.posts.nodes.forEach(({ uri, postId }) => {
+      createPage({
+        path: `/blogs${uri}`,
+        component: path.resolve(`./src/templates/posts/index.js`),
+        context: {
+          postId: postId,
+        },
+      })
     })
   })
 }

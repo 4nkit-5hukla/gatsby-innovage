@@ -1,7 +1,6 @@
 import React from "react"
 
 const Banner = props => {
-  console.log(props)
   return (
     <section
       className="wow fadeIn parallax bg-fixed"

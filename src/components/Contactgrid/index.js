@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from "react-html-parser"
 
 const Contactgrid = props => {
-  console.log(props)
   return (
     <section className="py-0 bg-light-gray wow fadeIn">
       <div className="container-fluid p-0">

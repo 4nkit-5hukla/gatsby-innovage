@@ -1,13 +1,11 @@
 const config = require("./config")
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+
 module.exports = {
   siteMetadata: {
     title: `innovagesoftwares`,
     description: `Innovage Softwares`,
     author: `@innovagesoftwares`,
-    isDev: JSON.parse(process.env.isDev),
+    wpUrl: config.wordPressUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

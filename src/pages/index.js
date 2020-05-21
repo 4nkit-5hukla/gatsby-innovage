@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/Banner"
 import BannerSlider from "../components/BannerSlider"
+import Blogssection from "../components/Blogssection"
 import Calltoaction from "../components/Calltoaction"
 import Clientsgrid from "../components/Clientsgrid"
 import Contactform from "../components/Contactform"
@@ -76,6 +77,26 @@ const IndexPage = data => {
                         }
                       }
                     }
+                  }
+                }
+                ... on WPGraphQL_Page_Pagebuilder_Sections_Blogssection {
+                  enable
+                  content {
+                    backgroundimage {
+                      altText
+                      sourceUrl
+                      imageFile {
+                        childImageSharp {
+                          original {
+                            src
+                            width
+                            height
+                          }
+                        }
+                      }
+                    }
+                    title
+                    subtitle
                   }
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Calltoaction {
@@ -480,7 +501,6 @@ const IndexPage = data => {
       {wpgraphql.page.PageBuilder.sections.map((section, index) => {
         let component
         if (section !== null) {
-          console.log(section.__typename.split("_").pop())
           if (section.enable) {
             switch (section.__typename.split("_").pop()) {
               case "Banner":
@@ -489,26 +509,43 @@ const IndexPage = data => {
               case "Bannerslider":
                 component = <BannerSlider key={index} slides={section.slides} />
                 break
+              case "Blogssection":
+                component = (
+                  <Blogssection key={index} content={section.content} />
+                )
+                break
               case "Calltoaction":
-                component = <Calltoaction key={index} content={section.content} />
+                component = (
+                  <Calltoaction key={index} content={section.content} />
+                )
                 break
               case "Clientsgrid":
-                component = <Clientsgrid key={index} content={section.content} />
+                component = (
+                  <Clientsgrid key={index} content={section.content} />
+                )
                 break
               case "Contactform":
-                component = <Contactform key={index} content={section.content} />
+                component = (
+                  <Contactform key={index} content={section.content} />
+                )
                 break
               case "Contactgrid":
-                component = <Contactgrid key={index} content={section.content} />
+                component = (
+                  <Contactgrid key={index} content={section.content} />
+                )
                 break
               case "Newsletter":
                 component = <Newsletter key={index} content={section.content} />
                 break
               case "Parallaxsection":
-                component = <Parallaxsection key={index} content={section.content} />
+                component = (
+                  <Parallaxsection key={index} content={section.content} />
+                )
                 break
               case "Recentblogs":
-                component = <Recentblogs key={index} content={section.content} />
+                component = (
+                  <Recentblogs key={index} content={section.content} />
+                )
                 break
               case "Section1":
                 component = <Section1 key={index} content={section.content} />
@@ -535,10 +572,14 @@ const IndexPage = data => {
                 component = <Section8 key={index} content={section.content} />
                 break
               case "Servicessection":
-                component = <Servicessection key={index} content={section.content} />
+                component = (
+                  <Servicessection key={index} content={section.content} />
+                )
                 break
               case "Testimonials":
-                component = <Testimonials key={index} content={section.content} />
+                component = (
+                  <Testimonials key={index} content={section.content} />
+                )
                 break
               default:
                 component = false

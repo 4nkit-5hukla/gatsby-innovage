@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from "react-html-parser"
 
 const Section3 = props => {
-  console.log(props)
   return (
     <section className="wow fadeIn">
       <div className="container">

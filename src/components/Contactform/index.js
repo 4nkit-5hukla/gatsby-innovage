@@ -1,8 +1,109 @@
-import React from "react"
+import React, { useState } from "react"
 import ReactHtmlParser from "react-html-parser"
+import { useStaticQuery, graphql } from "gatsby"
+import { Alert } from "reactstrap"
 
 const Contactform = props => {
-  console.log(props)
+  const [invalidFields, setInvalidFields] = useState(null)
+  const [responseColor, setResponseColor] = useState("")
+  const [responseContent, setResponseContent] = useState(false)
+  const [responseVisible, setResponseVisible] = useState(false)
+  const [responseErrorVisible, setResponseErrorVisible] = useState(false)
+  const {site} = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            wpUrl
+          }
+        }
+      }
+    `
+  )
+  const dismissResponse = () => {
+    setResponseVisible(false)
+    setResponseContent(false)
+  }
+  const dismissErrorResponse = () => {
+    setResponseErrorVisible(false)
+    setResponseContent(false)
+  }
+  const response = (
+    <Alert
+      className="rounded-0"
+      isOpen={responseVisible}
+      toggle={dismissResponse}
+      color={responseColor}
+    >
+      {responseContent}
+    </Alert>
+  )
+  const response_Error = (
+    <Alert
+      className="rounded-0"
+      isOpen={responseErrorVisible}
+      toggle={dismissErrorResponse}
+      color={responseColor}
+    >
+      {responseContent}
+    </Alert>
+  )
+  const sendFormData = async (URL, fromEle, fromData) => {
+    fetch(URL, {
+      method: "POST",
+      body: fromData,
+    })
+      .then(response => {
+        response.json().then(responseJson => {
+          setResponseContent(responseJson.message)
+          if (responseJson.status === "validation_failed") {
+            setResponseColor("warning")
+            if (responseJson.invalidFields !== null) {
+              setInvalidFields(responseJson.invalidFields)
+              responseJson.invalidFields.forEach(Field => {
+                document
+                  .getElementById(Field.into.split(".").pop())
+                  .classList.add("border-danger")
+                document
+                  .getElementById(Field.into.split(".").pop())
+                  .setAttribute("title", Field.message)
+              })
+            }
+          }
+          if (responseJson.status === "mail_sent") {
+            setResponseColor("success")
+            fromEle.reset()
+          }
+          setResponseVisible(true)
+        })
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+  const formSubmit = (event) => {
+    event.preventDefault()
+    dismissResponse()
+    dismissErrorResponse()
+    if (invalidFields !== null) {
+      invalidFields.forEach(Field => {
+        document
+          .getElementById(Field.into.split(".").pop())
+          .classList.remove("border-danger")
+        document
+          .getElementById(Field.into.split(".").pop())
+          .removeAttribute("title")
+      })
+    }
+    const wpUrl = site.siteMetadata.wpUrl
+    const formId = props.content.formid
+    const apiPath = `${wpUrl
+      .split(":")
+      .pop()}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback/`
+    const fromEle = event.target
+    const fromData = new FormData(event.target)
+    sendFormData(apiPath, fromEle, fromData)
+  }
   return (
     <section className="wow fadeIn big-section" id="section-down">
       <div className="container">
@@ -18,15 +119,23 @@ const Contactform = props => {
               <span className="text-extra-dark-gray alt-font text-large font-weight-600 margin-25px-bottom d-block">
                 Ready to get started?
               </span>
-              <form id="contact-form" method="post">
+              <form
+                id="contact-form"
+                method="post"
+                encType="multipart/form-data"
+                onSubmit={e => formSubmit(e)}
+              >
+                <div className="response">
+                  {response}
+                  {response_Error}
+                </div>
                 <div>
                   <div id="success-contact-form" className="mx-0"></div>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Name*"
-                    required
+                    name="fname"
+                    id="fname"
+                    placeholder="Full Name*"
                     className="w-100 mb-3 border-radius-4 bg-white medium-input"
                   />
                   <input
@@ -34,7 +143,6 @@ const Contactform = props => {
                     name="email"
                     id="email"
                     placeholder="E-mail*"
-                    required
                     className="w-100 mb-3 border-radius-4 bg-white medium-input"
                   />
                   <input

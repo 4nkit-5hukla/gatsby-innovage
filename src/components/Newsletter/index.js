@@ -2,7 +2,6 @@ import React from "react"
 import ReactHtmlParser from "react-html-parser"
 
 const Newsletter = props => {
-  console.log(props)
   return (
     <section className="bg-light-gray wow fadeIn">
       <div className="container">

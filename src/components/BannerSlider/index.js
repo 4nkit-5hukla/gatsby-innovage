@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const BannerSlider = props => {
-  console.log(props)
   const settings = {
     dots: true,
     arrows: true,
