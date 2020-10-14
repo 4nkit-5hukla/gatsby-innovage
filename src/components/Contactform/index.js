@@ -58,6 +58,7 @@ const Contactform = props => {
           setResponseContent(responseJson.message)
           if (responseJson.status === "validation_failed") {
             setResponseColor("warning")
+            console.log(responseJson.invalidFields)
             if (responseJson.invalidFields !== null) {
               setInvalidFields(responseJson.invalidFields)
               responseJson.invalidFields.forEach(Field => {
