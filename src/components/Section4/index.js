@@ -33,8 +33,9 @@ const Section4 = props => {
                       <div className="text-color-2">
                         {ReactHtmlParser(description)}
                       </div>
+                      {readMoreLink !== null &&
                       <a
-                        href={readMoreLink.url}
+                        href={readMoreLink.url !== "" ? readMoreLink.url : ""}
                         target={
                           readMoreLink.target !== "" ? readMoreLink.target : ""
                         }
@@ -46,6 +47,7 @@ const Section4 = props => {
                         ></i>
                         {readMoreLink.title}
                       </a>
+                      }
                     </div>
                   </div>
                 </React.Fragment>
