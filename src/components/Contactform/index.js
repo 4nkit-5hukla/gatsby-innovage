@@ -58,10 +58,10 @@ const Contactform = props => {
           setResponseContent(responseJson.message)
           if (responseJson.status === "validation_failed") {
             setResponseColor("warning")
-            console.log(responseJson.invalidFields)
-            if (responseJson.invalidFields !== null) {
-              setInvalidFields(responseJson.invalidFields)
-              responseJson.invalidFields.forEach(Field => {
+            console.log(responseJson)
+            if (responseJson.invalid_fields !== null) {
+              setInvalidFields(responseJson.invalid_fields)
+              responseJson.invalid_fields.forEach(Field => {
                 document
                   .getElementById(Field.into.split(".").pop())
                   .classList.add("border-danger")
