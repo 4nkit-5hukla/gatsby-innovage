@@ -106,7 +106,10 @@ const Contactform = props => {
     sendFormData(apiPath, fromEle, fromData)
   }
   return (
-    <section className="wow fadeIn big-section" id="section-down">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="wow fadeIn big-section"
+    >
       <div className="container">
         <div className="row">
           <div

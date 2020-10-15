@@ -3,7 +3,10 @@ import ReactHtmlParser from "react-html-parser"
 
 const Newsletter = props => {
   return (
-    <section className="bg-light-gray wow fadeIn">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="bg-light-gray wow fadeIn"
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 text-center">

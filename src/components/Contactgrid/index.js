@@ -3,7 +3,10 @@ import ReactHtmlParser from "react-html-parser"
 
 const Contactgrid = props => {
   return (
-    <section className="py-0 bg-light-gray wow fadeIn">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="py-0 bg-light-gray wow fadeIn"
+    >
       <div className="container-fluid p-0">
         <div className="row no-gutters">
           <div className="col-12 col-lg-4 image-hover-style-3 h-100 last-paragraph-no-margin">

@@ -2,7 +2,7 @@ import React from "react"
 
 const Calltoaction = props => {
   return (
-    <section className="wow fadeIn">
+    <section id={props.id !== "" ? props.id : null} className="wow fadeIn">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-xl-7 col-lg-8 col-md-10 text-center">

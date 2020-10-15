@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Clientsgrid = props => {
   return (
-    <section className="bg-light-gray">
+    <section id={props.id !== "" ? props.id : null} className="bg-light-gray">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-6 col-md-8 margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom text-center last-paragraph-no-margin">

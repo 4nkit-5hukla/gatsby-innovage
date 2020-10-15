@@ -3,6 +3,7 @@ import React from "react"
 const Parallaxsection = props => {
   return (
     <section
+      id={props.id !== "" ? props.id : null}
       className="parallax big-section wow fadeIn"
       data-stellar-background-ratio="0.5"
       style={{

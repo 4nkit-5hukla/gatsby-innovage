@@ -2,6 +2,8 @@ import React from "react"
 import logo from "../assets/images/logo.png"
 
 const Footer = (props) => {
+  const { data } = props
+  console.log(data)
   return (
     <footer className="footer-strip-dark bg-extra-dark-gray padding-90px-tb lg-padding-70px-tb md-padding-50px-tb sm-padding-40px-tb">
       <div className="container">

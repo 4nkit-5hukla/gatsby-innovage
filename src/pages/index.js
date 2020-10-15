@@ -35,6 +35,7 @@ const IndexPage = data => {
               sections {
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Banner {
                   enable
+                  id
                   content {
                     title
                     subtitle
@@ -55,6 +56,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Bannerslider {
                   enable
+                  id
                   slides {
                     enable
                     subTitle
@@ -81,6 +83,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Blogssection {
                   enable
+                  id
                   content {
                     backgroundimage {
                       altText
@@ -101,6 +104,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Calltoaction {
                   enable
+                  id
                   content {
                     title
                     button {
@@ -111,6 +115,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Contactform {
                   enable
+                  id
                   content {
                     formposition
                     formid
@@ -137,6 +142,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Contactgrid {
                   enable
+                  id
                   content {
                     left {
                       image {
@@ -196,6 +202,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Clientsgrid {
                   enable
+                  id
                   content {
                     title
                     subtitle
@@ -222,6 +229,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Newsletter {
                   enable
+                  id
                   content {
                     title
                     subtitle
@@ -230,6 +238,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Parallaxsection {
                   enable
+                  id
                   content {
                     backgroundimage {
                       altText
@@ -267,6 +276,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Recentblogs {
                   enable
+                  id
                   content {
                     thinTitle
                     mainTitle
@@ -276,6 +286,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section1 {
                   enable
+                  id
                   content {
                     title
                     description
@@ -310,6 +321,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section2 {
                   enable
+                  id
                   content {
                     backgroundImage {
                       altText
@@ -336,6 +348,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section3 {
                   enable
+                  id
                   content {
                     title
                     description
@@ -348,6 +361,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section4 {
                   enable
+                  id
                   content {
                     portfolios {
                       bgImage {
@@ -376,6 +390,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section5 {
                   enable
+                  id
                   content {
                     leftTitle
                     leftContent
@@ -396,6 +411,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section6 {
                   enable
+                  id
                   content {
                     thintitle
                     maintitle
@@ -408,6 +424,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section7 {
                   enable
+                  id
                   content {
                     thintitle
                     maintitle
@@ -432,6 +449,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Section8 {
                   enable
+                  id
                   content {
                     sectionimage {
                       altText
@@ -455,6 +473,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Servicessection {
                   enable
+                  id
                   content {
                     services {
                       thintitle
@@ -465,6 +484,7 @@ const IndexPage = data => {
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Testimonials {
                   enable
+                  id
                   content {
                     thintitle
                     maintitle
@@ -504,81 +524,183 @@ const IndexPage = data => {
           if (section.enable) {
             switch (section.__typename.split("_").pop()) {
               case "Banner":
-                component = <Banner key={index} content={section.content} />
+                component = (
+                  <Banner
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Bannerslider":
-                component = <BannerSlider key={index} slides={section.slides} />
+                component = (
+                  <BannerSlider
+                    key={index}
+                    id={section.id}
+                    slides={section.slides}
+                  />
+                )
                 break
               case "Blogssection":
                 component = (
-                  <Blogssection key={index} content={section.content} />
+                  <Blogssection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Calltoaction":
                 component = (
-                  <Calltoaction key={index} content={section.content} />
+                  <Calltoaction
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Clientsgrid":
                 component = (
-                  <Clientsgrid key={index} content={section.content} />
+                  <Clientsgrid
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Contactform":
                 component = (
-                  <Contactform key={index} content={section.content} />
+                  <Contactform
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Contactgrid":
                 component = (
-                  <Contactgrid key={index} content={section.content} />
+                  <Contactgrid
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Newsletter":
-                component = <Newsletter key={index} content={section.content} />
+                component = (
+                  <Newsletter
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Parallaxsection":
                 component = (
-                  <Parallaxsection key={index} content={section.content} />
+                  <Parallaxsection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Recentblogs":
                 component = (
-                  <Recentblogs key={index} content={section.content} />
+                  <Recentblogs
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Section1":
-                component = <Section1 key={index} content={section.content} />
+                component = (
+                  <Section1
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section2":
-                component = <Section2 key={index} content={section.content} />
+                component = (
+                  <Section2
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section3":
-                component = <Section3 key={index} content={section.content} />
+                component = (
+                  <Section3
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section4":
-                component = <Section4 key={index} content={section.content} />
+                component = (
+                  <Section4
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section5":
-                component = <Section5 key={index} content={section.content} />
+                component = (
+                  <Section5
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section6":
-                component = <Section6 key={index} content={section.content} />
+                component = (
+                  <Section6
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section7":
-                component = <Section7 key={index} content={section.content} />
+                component = (
+                  <Section7
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section8":
-                component = <Section8 key={index} content={section.content} />
+                component = (
+                  <Section8
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Servicessection":
                 component = (
-                  <Servicessection key={index} content={section.content} />
+                  <Servicessection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Testimonials":
                 component = (
-                  <Testimonials key={index} content={section.content} />
+                  <Testimonials
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               default:

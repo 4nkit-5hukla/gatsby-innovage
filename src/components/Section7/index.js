@@ -3,7 +3,10 @@ import ReactHtmlParser from "react-html-parser"
 
 const Section7 = props => {
   return (
-    <section className="wow fadeIn last-paragraph-no-margin">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="wow fadeIn last-paragraph-no-margin"
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-xl-8 col-lg-9 margin-eight-bottom text-center last-paragraph-no-margin">
@@ -17,10 +20,7 @@ const Section7 = props => {
         </div>
         <div className="row">
           {props.content.showcases.map(
-            (
-              { image, title, description },
-              index
-            ) => {
+            ({ image, title, description }, index) => {
               return (
                 <div
                   key={index}

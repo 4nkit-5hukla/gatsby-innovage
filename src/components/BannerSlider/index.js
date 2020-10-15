@@ -19,10 +19,13 @@ const BannerSlider = props => {
     slidesToScroll: 1,
   }
   return (
-    <div className="home-banner position-relative">
+    <div
+      id={props.id !== "" ? props.id : null}
+      className="home-banner position-relative"
+    >
       <Slider {...settings}>
         {props.slides.map((slide, index) => {
-          if (slide.enable){
+          if (slide.enable) {
             return (
               <div key={index} className="home-banner-content bg-image">
                 <div className="bg-layer">
@@ -61,7 +64,7 @@ const BannerSlider = props => {
                 </Container>
               </div>
             )
-          }else{
+          } else {
             return false
           }
         })}

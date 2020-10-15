@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser"
 
 const Section5 = props => {
   return (
-    <section className="wow fadeIn">
+    <section id={props.id !== "" ? props.id : null} className="wow fadeIn">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-5 md-margin-50px-bottom">

@@ -3,6 +3,7 @@ import React from "react"
 const Banner = props => {
   return (
     <section
+      id={props.id !== "" ? props.id : null}
       className="wow fadeIn parallax bg-fixed"
       data-stellar-background-ratio="0.5"
       style={{

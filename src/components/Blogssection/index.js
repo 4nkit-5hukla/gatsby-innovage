@@ -50,6 +50,7 @@ const Blogssection = props => {
   return (
     <>
       <section
+        id={props.id !== "" ? props.id : null}
         className="wow fadeIn parallax bg-fixed arch-blog-banner"
         style={{
           backgroundImage: `url(${props.content.backgroundimage.imageFile.childImageSharp.original.src})`,

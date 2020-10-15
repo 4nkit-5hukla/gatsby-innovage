@@ -3,7 +3,10 @@ import ReactHtmlParser from 'react-html-parser'
 
 const Testimonials = props => {
   return (
-    <section className="wow fadeIn bg-light-gray">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="wow fadeIn bg-light-gray"
+    >
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">

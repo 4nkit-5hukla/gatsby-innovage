@@ -3,7 +3,10 @@ import ReactHtmlParser from "react-html-parser"
 
 const Servicessection = props => {
   return (
-    <section className="bg-extra-dark-gray">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="bg-extra-dark-gray"
+    >
       <div className="container-fluid">
         <div className="row">
           {props.content.services.map(

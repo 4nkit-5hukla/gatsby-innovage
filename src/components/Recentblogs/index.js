@@ -48,7 +48,10 @@ const Recentblogs = props => {
     `
   )
   return (
-    <section className="border-top border-color-extra-light-gray wow fadeIn">
+    <section
+      id={props.id !== "" ? props.id : null}
+      className="border-top border-color-extra-light-gray wow fadeIn"
+    >
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
@@ -68,7 +71,10 @@ const Recentblogs = props => {
                 { author, date, excerpt, featuredImage, title, slug, uri },
                 index
               ) => (
-                <div key={index} className="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin wow fadeInUp">
+                <div
+                  key={index}
+                  className="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin wow fadeInUp"
+                >
                   <div className="blog-post blog-post-style1 text-center text-md-left">
                     <div className="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom">
                       <Link to={`/blogs/${slug}/`}>

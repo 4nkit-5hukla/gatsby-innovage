@@ -4,6 +4,7 @@ import ReactHtmlParser from 'react-html-parser'
 const Section2 = props => {
   return (
     <section
+      id={props.id !== "" ? props.id : null}
       className="wow fadeIn cover-background md-no-background-img bg-image bg-medium-light-gray"
       style={{
         backgroundImage: `url(${props.content.backgroundImage.imageFile.childImageSharp.original.src})`,

@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser"
 
 const Section4 = props => {
   return (
-    <section className="p-0 wow fadeIn">
+    <section id={props.id !== "" ? props.id : null} className="p-0 wow fadeIn">
       <div className="container-fluid">
         <div className="row">
           {props.content.portfolios.map(
@@ -33,21 +33,23 @@ const Section4 = props => {
                       <div className="text-color-2">
                         {ReactHtmlParser(description)}
                       </div>
-                      {readMoreLink !== null &&
-                      <a
-                        href={readMoreLink.url !== "" ? readMoreLink.url : ""}
-                        target={
-                          readMoreLink.target !== "" ? readMoreLink.target : ""
-                        }
-                        className="btn btn-transparent-white btn-small border-radius-4"
-                      >
-                        <i
-                          className="fa fa-play-circle icon-very-small margin-5px-right ml-0"
-                          aria-hidden="true"
-                        ></i>
-                        {readMoreLink.title}
-                      </a>
-                      }
+                      {readMoreLink !== null && (
+                        <a
+                          href={readMoreLink.url !== "" ? readMoreLink.url : ""}
+                          target={
+                            readMoreLink.target !== ""
+                              ? readMoreLink.target
+                              : ""
+                          }
+                          className="btn btn-transparent-white btn-small border-radius-4"
+                        >
+                          <i
+                            className="fa fa-play-circle icon-very-small margin-5px-right ml-0"
+                            aria-hidden="true"
+                          ></i>
+                          {readMoreLink.title}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </React.Fragment>

@@ -29,85 +29,188 @@ const Page = ({ data }) => {
       <SEO title={data.wpgraphql.page.title} />
       {data.wpgraphql.page.PageBuilder.sections.map((section, index) => {
         let component
-        if (section!==null){
+        console.log(section)
+        if (section !== null) {
           if (section.enable) {
             switch (section.__typename.split("_").pop()) {
               case "Banner":
-                component = <Banner key={index} content={section.content} />
+                component = (
+                  <Banner
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Bannerslider":
-                component = <BannerSlider key={index} slides={section.slides} />
+                component = (
+                  <BannerSlider
+                    key={index}
+                    id={section.id}
+                    slides={section.slides}
+                  />
+                )
                 break
               case "Blogssection":
                 component = (
-                  <Blogssection key={index} content={section.content} />
+                  <Blogssection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Calltoaction":
                 component = (
-                  <Calltoaction key={index} content={section.content} />
+                  <Calltoaction
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Clientsgrid":
                 component = (
-                  <Clientsgrid key={index} content={section.content} />
+                  <Clientsgrid
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Contactform":
                 component = (
-                  <Contactform key={index} content={section.content} />
+                  <Contactform
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Contactgrid":
                 component = (
-                  <Contactgrid key={index} content={section.content} />
+                  <Contactgrid
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Newsletter":
-                component = <Newsletter key={index} content={section.content} />
+                component = (
+                  <Newsletter
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Parallaxsection":
                 component = (
-                  <Parallaxsection key={index} content={section.content} />
+                  <Parallaxsection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Recentblogs":
                 component = (
-                  <Recentblogs key={index} content={section.content} />
+                  <Recentblogs
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Section1":
-                component = <Section1 key={index} content={section.content} />
+                component = (
+                  <Section1
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section2":
-                component = <Section2 key={index} content={section.content} />
+                component = (
+                  <Section2
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section3":
-                component = <Section3 key={index} content={section.content} />
+                component = (
+                  <Section3
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section4":
-                component = <Section4 key={index} content={section.content} />
+                component = (
+                  <Section4
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section5":
-                component = <Section5 key={index} content={section.content} />
+                component = (
+                  <Section5
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section6":
-                component = <Section6 key={index} content={section.content} />
+                component = (
+                  <Section6
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section7":
-                component = <Section7 key={index} content={section.content} />
+                component = (
+                  <Section7
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Section8":
-                component = <Section8 key={index} content={section.content} />
+                component = (
+                  <Section8
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
                 break
               case "Servicessection":
                 component = (
-                  <Servicessection key={index} content={section.content} />
+                  <Servicessection
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               case "Testimonials":
                 component = (
-                  <Testimonials key={index} content={section.content} />
+                  <Testimonials
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
                 )
                 break
               default:
@@ -122,473 +225,492 @@ const Page = ({ data }) => {
 }
 
 export const query = graphql`
-         query($pageId: ID!) {
-           wpgraphql {
-             page(id: $pageId, idType: DATABASE_ID) {
-               pageId
-               title(format: RENDERED)
-               PageBuilder {
-                 sections {
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Banner {
-                     enable
-                     content {
-                       title
-                       subtitle
-                       bgimage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Bannerslider {
-                     enable
-                     slides {
-                       enable
-                       subTitle
-                       title
-                       link {
-                         target
-                         title
-                         url
-                       }
-                       image {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               width
-                               src
-                               height
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Blogssection {
-                     enable
-                     content {
-                       backgroundimage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       title
-                       subtitle
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Calltoaction {
-                     enable
-                     content {
-                       title
-                       button {
-                         url
-                         title
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Contactform {
-                     enable
-                     content {
-                       formposition
-                       formid
-                       image {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       title
-                       infodescription
-                       infobutton {
-                         url
-                         title
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Contactgrid {
-                     enable
-                     content {
-                       left {
-                         image {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 width
-                                 height
-                               }
-                             }
-                           }
-                         }
-                         icon
-                         title
-                         description
-                       }
-                       center {
-                         icon
-                         title
-                         description
-                         image {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 width
-                                 height
-                               }
-                             }
-                           }
-                         }
-                       }
-                       right {
-                         image {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 width
-                                 height
-                               }
-                             }
-                           }
-                         }
-                         icon
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Clientsgrid {
-                     enable
-                     content {
-                       title
-                       subtitle
-                       clients {
-                         logo {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 height
-                                 width
-                               }
-                             }
-                           }
-                         }
-                         link {
-                           title
-                           url
-                         }
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Newsletter {
-                     enable
-                     content {
-                       title
-                       subtitle
-                       description
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Parallaxsection {
-                     enable
-                     content {
-                       backgroundimage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       link {
-                         url
-                         title
-                         target
-                       }
-                       linkimage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       title
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Recentblogs {
-                     enable
-                     content {
-                       thinTitle
-                       mainTitle
-                       displayDate
-                       displayUser
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section1 {
-                     enable
-                     content {
-                       title
-                       description
-                       gridboxes {
-                         boxbg {
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 width
-                                 src
-                                 height
-                               }
-                             }
-                           }
-                         }
-                         logo {
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 height
-                                 src
-                                 width
-                               }
-                             }
-                           }
-                         }
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section2 {
-                     enable
-                     content {
-                       backgroundImage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       boldTitle
-                       thinTitle
-                       description
-                       grid {
-                         icon
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section3 {
-                     enable
-                     content {
-                       title
-                       description
-                       iconBoxes {
-                         icon
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section4 {
-                     enable
-                     content {
-                       portfolios {
-                         bgImage {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 height
-                                 src
-                                 width
-                               }
-                             }
-                           }
-                         }
-                         thinTitle
-                         mainTitle
-                         description
-                         readMoreLink {
-                           target
-                           title
-                           url
-                         }
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section5 {
-                     enable
-                     content {
-                       leftTitle
-                       leftContent
-                       rightImage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               width
-                               src
-                               height
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section6 {
-                     enable
-                     content {
-                       thintitle
-                       maintitle
-                       iconBoxes {
-                         icon
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section7 {
-                     enable
-                     content {
-                       thintitle
-                       maintitle
-                       showcases {
-                         image {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 width
-                                 height
-                               }
-                             }
-                           }
-                         }
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Section8 {
-                     enable
-                     content {
-                       sectionimage {
-                         altText
-                         sourceUrl
-                         imageFile {
-                           childImageSharp {
-                             original {
-                               src
-                               width
-                               height
-                             }
-                           }
-                         }
-                       }
-                       maintitle
-                       features {
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Servicessection {
-                     enable
-                     content {
-                       services {
-                         thintitle
-                         title
-                         description
-                       }
-                     }
-                   }
-                   ... on WPGraphQL_Page_Pagebuilder_Sections_Testimonials {
-                     enable
-                     content {
-                       thintitle
-                       maintitle
-                       testimonialdata {
-                         testimonialcontent
-                         avatar {
-                           altText
-                           sourceUrl
-                           imageFile {
-                             childImageSharp {
-                               original {
-                                 src
-                                 width
-                                 height
-                               }
-                             }
-                           }
-                         }
-                         name
-                         designation
-                       }
-                     }
-                   }
-                 }
-               }
-             }
-           }
-         }
-       `
+  query($pageId: ID!) {
+    wpgraphql {
+      page(id: $pageId, idType: DATABASE_ID) {
+        pageId
+        title(format: RENDERED)
+        PageBuilder {
+          sections {
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Banner {
+              enable
+              id
+              content {
+                title
+                subtitle
+                bgimage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Bannerslider {
+              enable
+              slides {
+                enable
+                subTitle
+                title
+                link {
+                  target
+                  title
+                  url
+                }
+                image {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        width
+                        src
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Blogssection {
+              enable
+              id
+              content {
+                backgroundimage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                title
+                subtitle
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Calltoaction {
+              enable
+              id
+              content {
+                title
+                button {
+                  url
+                  title
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Contactform {
+              enable
+              id
+              content {
+                formposition
+                formid
+                image {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                title
+                infodescription
+                infobutton {
+                  url
+                  title
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Contactgrid {
+              enable
+              id
+              content {
+                left {
+                  image {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                  icon
+                  title
+                  description
+                }
+                center {
+                  icon
+                  title
+                  description
+                  image {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                }
+                right {
+                  image {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                  icon
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Clientsgrid {
+              enable
+              id
+              content {
+                title
+                subtitle
+                clients {
+                  logo {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          height
+                          width
+                        }
+                      }
+                    }
+                  }
+                  link {
+                    title
+                    url
+                  }
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Newsletter {
+              enable
+              id
+              content {
+                title
+                subtitle
+                description
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Parallaxsection {
+              enable
+              id
+              content {
+                backgroundimage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                link {
+                  url
+                  title
+                  target
+                }
+                linkimage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                title
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Recentblogs {
+              enable
+              id
+              content {
+                thinTitle
+                mainTitle
+                displayDate
+                displayUser
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section1 {
+              enable
+              id
+              content {
+                title
+                description
+                gridboxes {
+                  boxbg {
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          width
+                          src
+                          height
+                        }
+                      }
+                    }
+                  }
+                  logo {
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          height
+                          src
+                          width
+                        }
+                      }
+                    }
+                  }
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section2 {
+              enable
+              id
+              content {
+                backgroundImage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                boldTitle
+                thinTitle
+                description
+                grid {
+                  icon
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section3 {
+              enable
+              id
+              content {
+                title
+                description
+                iconBoxes {
+                  icon
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section4 {
+              enable
+              id
+              content {
+                portfolios {
+                  bgImage {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          height
+                          src
+                          width
+                        }
+                      }
+                    }
+                  }
+                  thinTitle
+                  mainTitle
+                  description
+                  readMoreLink {
+                    target
+                    title
+                    url
+                  }
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section5 {
+              enable
+              id
+              content {
+                leftTitle
+                leftContent
+                rightImage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        width
+                        src
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section6 {
+              enable
+              id
+              content {
+                thintitle
+                maintitle
+                iconBoxes {
+                  icon
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section7 {
+              enable
+              id
+              content {
+                thintitle
+                maintitle
+                showcases {
+                  image {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Section8 {
+              enable
+              id
+              content {
+                sectionimage {
+                  altText
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      original {
+                        src
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+                maintitle
+                features {
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Servicessection {
+              enable
+              id
+              content {
+                services {
+                  thintitle
+                  title
+                  description
+                }
+              }
+            }
+            ... on WPGraphQL_Page_Pagebuilder_Sections_Testimonials {
+              enable
+              id
+              content {
+                thintitle
+                maintitle
+                testimonialdata {
+                  testimonialcontent
+                  avatar {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        original {
+                          src
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                  name
+                  designation
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Page

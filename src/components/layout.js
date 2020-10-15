@@ -6,20 +6,78 @@ import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    query SiteDataQuery {
+      wpgraphql {
+        themeOptions {
+          pageTitle
+          pageSlug
+          ThemeOptions {
+            header {
+              headerlogo {
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    original {
+                      src
+                      height
+                      width
+                    }
+                  }
+                }
+              }
+              mainMenu {
+                menuLink {
+                  url
+                  title
+                  target
+                }
+              }
+            }
+            footer {
+              column2
+              column3
+              socialMedia {
+                icon
+                link {
+                  target
+                  title
+                  url
+                }
+              }
+              footerlogo {
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    original {
+                      src
+                      height
+                      width
+                    }
+                  }
+                }
+              }
+              cta {
+                enable
+                title
+                subTitle
+                buttonLink {
+                  url
+                  title
+                  target
+                }
+              }
+            }
+          }
         }
       }
     }
   `)
-
+  const headerData = data.wpgraphql.themeOptions.ThemeOptions.header, footerData = data.wpgraphql.themeOptions.ThemeOptions.footer
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header data={headerData} />
         <main className="main-section">{children}</main>
-       <Footer/>
+       <Footer data={footerData} />
     </>
   )
 }
