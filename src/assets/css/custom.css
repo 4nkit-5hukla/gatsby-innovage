@@ -247,3 +247,7 @@ body .text-color-2 {
 .maintenance-sec {
 	background-image: url('../images/maintenance-bg.jpg');
 }
+
+footer.footer-strip-dark p {
+    margin: 0;
+}

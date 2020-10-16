@@ -72,7 +72,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const headerData = data.wpgraphql.themeOptions.ThemeOptions.header, footerData = data.wpgraphql.themeOptions.ThemeOptions.footer
+  const headerData = data.wpgraphql.themeOptions.ThemeOptions.header,
+    footerData = data.wpgraphql.themeOptions.ThemeOptions.footer
   return (
     <>
       <Header data={headerData} />

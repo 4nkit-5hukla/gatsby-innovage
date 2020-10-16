@@ -1,15 +1,15 @@
 /*eslint jsx-a11y/anchor-is-valid: 0*/
-import React, { useState} from "react";
-import { Link } from "gatsby";
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
+import React, { useState} from "react"
+import { Link } from "gatsby"
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 const Header = props => {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => setIsOpen(!isOpen)
-  const { data } = props
-  const headerLogo = data.headerlogo.imageFile.childImageSharp.original
-  const mainMenu = data.mainMenu
+  const { data } = props,
+    [isOpen, setIsOpen] = useState(false),
+    toggle = () => setIsOpen(!isOpen),
+    headerLogo = data.headerlogo.imageFile.childImageSharp.original,
+    mainMenu = data.mainMenu
   return (
     <div className="bg-transparent header-part header position-absolute w-100">
       <Navbar color="" light={true} expand="lg" className="p-sm-0">
@@ -51,6 +51,6 @@ const Header = props => {
       </Navbar>
     </div>
   )
-};
+}
 
-export default Header;
+export default Header

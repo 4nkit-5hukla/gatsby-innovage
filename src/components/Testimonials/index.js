@@ -1,5 +1,5 @@
 import React from "react"
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from "react-html-parser"
 
 const Testimonials = props => {
   return (
@@ -61,4 +61,5 @@ const Testimonials = props => {
     </section>
   )
 }
+
 export default Testimonials
