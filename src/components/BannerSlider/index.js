@@ -41,7 +41,7 @@ const BannerSlider = props => {
                 </div>
                 <Container className="banner-data">
                   <Row>
-                    <div className="m-auto col-12 col-md-8 col-lg-6">
+                    <div className="m-auto col-12 col-md-8 col-lg-8">
                       <span className="text-white MT-R opacity6 text-uppercase">
                         {slide.title}
                       </span>
