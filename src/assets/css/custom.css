@@ -248,6 +248,12 @@ body .text-color-2 {
 	background-image: url('../images/maintenance-bg.jpg');
 }
 
+footer .social-icon-style-8 li {
+    margin: 0 8px;
+}
+footer .footer-menu li {
+    margin: 0 5px;
+}
 footer.footer-strip-dark p {
     margin: 0;
 }
