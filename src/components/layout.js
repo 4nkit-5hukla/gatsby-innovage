@@ -44,16 +44,11 @@ const Layout = ({ children }) => {
                   url
                 }
               }
-              footerlogo {
-                sourceUrl
-                imageFile {
-                  childImageSharp {
-                    original {
-                      src
-                      height
-                      width
-                    }
-                  }
+              footerMenu {
+                link {
+                  target
+                  title
+                  url
                 }
               }
               cta {
