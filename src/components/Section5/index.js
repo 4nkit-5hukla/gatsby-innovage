@@ -6,7 +6,7 @@ const Section5 = props => {
     <section id={props.id !== "" ? props.id : null} className="wow fadeIn">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-12 col-lg-5 md-margin-50px-bottom">
+          <div className="col-12 col-lg-6 md-margin-50px-bottom">
             <h3 className="h-3 alt-font text-extra-dark-gray font-weight-600">
               {props.content.leftTitle}
             </h3>
@@ -14,7 +14,7 @@ const Section5 = props => {
               {ReactHtmlParser(props.content.leftContent)}
             </div>
           </div>
-          <div className="col-12 col-lg-7 text-center">
+          <div className="col-12 col-lg-6 text-center">
             <img
               src={
                 props.content.rightImage.imageFile.childImageSharp.original.src
