@@ -13,7 +13,7 @@ const Footer = (props) => {
       <div className="container">
         {cta.enable && (
           <div className="row align-items-center sm-text-center">
-            <div className="col-md-8 col-12 sm-margin-30px-bottom">
+            <div className="col-md-9 col-12 sm-margin-30px-bottom">
               {cta.title !== "" && (
                 <h5 className="text-white margin-5px-bottom">{cta.title}</h5>
               )}
@@ -21,7 +21,7 @@ const Footer = (props) => {
                 <span className="text-color-2 text-medium">{cta.subTitle}</span>
               )}
             </div>
-            <div className="col-md-4 col-12 text-md-right text-sm-center">
+            <div className="col-md-3 col-12 text-md-right text-sm-center">
               {cta.buttonLink.title !== "" && (
                 <span className="text-extra-large text-extra-dark-gray text-light-gray d-inline-block sm-d-block">
                   <a
@@ -44,7 +44,7 @@ const Footer = (props) => {
         >
           <div className="row align-items-center">
             <div className="col-lg-3 col-md-12 md-text-center md-margin-50px-bottom sm-margin-30px-bottom">
-              <a href="/">
+              <a href="/" className="d-none">
                 <img
                   className="footer-logo"
                   src={footerlogo}
@@ -52,14 +52,6 @@ const Footer = (props) => {
                   alt="Logo"
                 />
               </a>
-            </div>
-            <div className="text-color-2 col-lg-4 col-md-5 col-12 sm-margin-30px-bottom text-medium sm-text-center">
-              {ReactHtmlParser(column2)}
-            </div>
-            <div className="text-color-2 col-lg-3 col-md-4 col-12 sm-margin-30px-bottom text-medium sm-text-center">
-              {ReactHtmlParser(column3)}
-            </div>
-            <div className="col-lg-2 col-md-3 text-md-right sm-text-center">
               <div className="social-icon-style-8 d-inline-block vertical-align-middle">
                 <ul className="small-icon mb-0">
                   {socialMedia.map(({ link, icon }, index) => {
@@ -80,6 +72,13 @@ const Footer = (props) => {
                 </ul>
               </div>
             </div>
+            <div className="text-color-2 col-lg-4 col-md-5 col-12 sm-margin-30px-bottom text-medium sm-text-center">
+              {ReactHtmlParser(column2)}
+            </div>
+            <div className="text-color-2 col-lg-3 col-md-4 col-12 sm-margin-30px-bottom text-medium sm-text-center">
+              {ReactHtmlParser(column3)}
+            </div>
+            <div className="col-lg-2 col-md-3 text-md-right sm-text-center"></div>
           </div>
         </div>
       </div>

@@ -13,16 +13,6 @@ const Section5 = props => {
             <div className="left-list">
               {ReactHtmlParser(props.content.leftContent)}
             </div>
-            <a
-              href="home-classic-digital-agency.html"
-              className="btn btn-dark-gray btn-small text-extra-small border-radius-4 margin-20px-top"
-            >
-              <i
-                className="fa fa-play-circle icon-very-small margin-5px-right no-margin-left"
-                aria-hidden="true"
-              ></i>{" "}
-              ALL advantages
-            </a>
           </div>
           <div className="col-12 col-lg-7 text-center">
             <img
