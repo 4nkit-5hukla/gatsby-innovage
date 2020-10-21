@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import ReactHtmlParser from "react-html-parser"
 
 const Footer = (props) => {
@@ -77,14 +78,14 @@ const Footer = (props) => {
                   {footerMenu.map(({ link }, index) => {
                     return (
                       <li key={index}>
-                        <a
+                        <Link
                           className="text-white-2"
-                          href={link.url}
+                          to={link.url}
                           rel="noopener noreferrer"
                           target={link.target}
                         >
                           {link.title}
-                        </a>
+                        </Link>
                       </li>
                     )
                   })}
