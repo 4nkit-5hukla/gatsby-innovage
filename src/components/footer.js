@@ -73,24 +73,22 @@ const Footer = (props) => {
               {ReactHtmlParser(column3)}
             </div>
             <div className="col-lg-4 col-md-4 text-md-right sm-text-center">
-              <div className="footer-menu d-inline-block">
-                <ul className="small-icon mb-0">
-                  {footerMenu.map(({ link }, index) => {
-                    return (
-                      <li key={index}>
-                        <Link
-                          className="text-white-2"
-                          to={link.url}
-                          rel="noopener noreferrer"
-                          target={link.target}
-                        >
-                          {link.title}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+              <ul className="footer-menu mb-0 list-unstyled d-flex justify-content-between">
+                {footerMenu.map(({ link }, index) => {
+                  return (
+                    <li key={index}>
+                      <Link
+                        className="text-white-2"
+                        to={link.url}
+                        rel="noopener noreferrer"
+                        target={link.target}
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         </div>
