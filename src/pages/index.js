@@ -19,8 +19,11 @@ import Section5 from "../components/Section5"
 import Section6 from "../components/Section6"
 import Section7 from "../components/Section7"
 import Section8 from "../components/Section8"
+import Section9 from "../components/Section9"
 import Servicessection from "../components/Servicessection"
 import Recentblogs from "../components/Recentblogs"
+import Pagetitlesection from "../components/Pagetitlesection"
+import PageContent from "../components/Pagecontent"
 import Testimonials from "../components/Testimonials"
 
 const IndexPage = data => {
@@ -117,6 +120,8 @@ const IndexPage = data => {
                   enable
                   id
                   content {
+                    sectionTitle
+                    sectionSubTitle
                     formposition
                     formid
                     image {
@@ -471,6 +476,29 @@ const IndexPage = data => {
                     }
                   }
                 }
+                ... on WPGraphQL_Page_Pagebuilder_Sections_Section9 {
+                  id
+                  enable
+                  content {
+                    portfolios {
+                      mainTitle
+                      description
+                      bgImage {
+                        altText
+                        sourceUrl
+                        imageFile {
+                          childImageSharp {
+                            original {
+                              src
+                              height
+                              width
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Servicessection {
                   enable
                   id
@@ -481,6 +509,13 @@ const IndexPage = data => {
                       description
                     }
                   }
+                }
+                ... on WPGraphQL_Page_Pagebuilder_Sections_Pagetitlesection {
+                  enable
+                }
+                ... on WPGraphQL_Page_Pagebuilder_Sections_Pagecontent {
+                  enable
+                  pageContent
                 }
                 ... on WPGraphQL_Page_Pagebuilder_Sections_Testimonials {
                   enable
@@ -685,12 +720,39 @@ const IndexPage = data => {
                   />
                 )
                 break
+              case "Section9":
+                component = (
+                  <Section9
+                    key={index}
+                    id={section.id}
+                    content={section.content}
+                  />
+                )
+                break
               case "Servicessection":
                 component = (
                   <Servicessection
                     key={index}
                     id={section.id}
                     content={section.content}
+                  />
+                )
+                break
+              case "Pagetitlesection":
+                component = (
+                  <Pagetitlesection
+                    key={index}
+                    id={section.id}
+                    title={wpgraphql.page.title}
+                  />
+                )
+                break
+              case "Pagecontent":
+                component = (
+                  <PageContent
+                    key={index}
+                    id={section.id}
+                    content={section.pageContent}
                   />
                 )
                 break

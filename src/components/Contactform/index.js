@@ -106,12 +106,32 @@ const Contactform = props => {
     sendFormData(apiPath, fromEle, fromData)
   }
   return (
-    <section
-      id={props.id !== "" ? props.id : null}
-      className="wow fadeIn big-section"
-    >
+    <section id={props.id !== "" ? props.id : null} className="wow fadeIn">
       <div className="container">
         <div className="row">
+          <div className="col-12 text-center">
+            {props.content.sectionSubTitle !== null && (
+              <p className="alt-font margin-5px-bottom text-uppercase text-small text-medium-gray">
+                {props.content.sectionSubTitle}
+              </p>
+            )}
+            {props.content.sectionTitle !== null && (
+              <h3 className="h-3 text-uppercase alt-font text-extra-dark-gray margin-10px-top margin-20px-bottom font-weight-700 md-width-100 sm-width-100">
+                {props.content.sectionTitle}
+              </h3>
+            )}
+            {props.content.sectionTitle !== null && (
+              <span className="separator-line-horizontal-medium-light2 bg-deep-pink d-table mx-auto width-100px" />
+            )}
+          </div>
+        </div>
+        <div
+          className={`row ${
+            props.content.sectionTitle !== null
+              ? `margin-100px-top md-margin-70px-top sm-margin-50px-top`
+              : null
+          }`}
+        >
           <div
             className={
               props.content.formposition === "left"

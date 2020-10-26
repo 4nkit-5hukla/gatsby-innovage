@@ -61,7 +61,7 @@ const Recentblogs = props => {
             <h3 className="h-3 text-uppercase alt-font text-extra-dark-gray margin-10px-top margin-20px-bottom font-weight-700 md-width-100 sm-width-100">
               {props.content.mainTitle}
             </h3>
-            <span className="separator-line-horizontal-medium-light2 bg-deep-pink d-table mx-auto width-100px"></span>
+            <span className="separator-line-horizontal-medium-light2 bg-deep-pink d-table mx-auto width-100px" />
           </div>
         </div>
         <div className="row margin-100px-top md-margin-70px-top sm-margin-50px-top">

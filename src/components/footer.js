@@ -9,7 +9,6 @@ const Footer = (props) => {
     column3 = data.column3,
     socialMedia = data.socialMedia,
     footerMenu = data.footerMenu
-  console.log(data)
   return (
     <footer className="footer-strip-dark bg-extra-dark-gray padding-90px-tb lg-padding-70px-tb md-padding-50px-tb sm-padding-40px-tb">
       <div className="container">
