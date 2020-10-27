@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import $ from "jquery"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -69,6 +70,24 @@ const Layout = ({ children }) => {
   `)
   const headerData = data.wpgraphql.themeOptions.ThemeOptions.header,
     footerData = data.wpgraphql.themeOptions.ThemeOptions.footer
+  useEffect(() => {
+    let lastScrollTop = 0
+    $(window).scroll(function(event) {
+      let st = $(this).scrollTop()
+      if (st === 0) {
+        $("header").removeClass("sticky header-appear")
+      } else if (st > lastScrollTop) {
+        // downscroll code
+        $("header")
+          .removeClass("header-appear")
+          .addClass("sticky")
+      } else {
+        // upscroll code
+        $("header").addClass("header-appear")
+      }
+      lastScrollTop = st
+    })
+  }, [])
   return (
     <>
       <Header data={headerData} />

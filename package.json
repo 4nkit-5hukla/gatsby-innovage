@@ -17,6 +17,7 @@
     "gatsby-source-graphql": "^2.5.1",
     "gatsby-source-wordpress": "^3.2.3",
     "gatsby-transformer-sharp": "^2.3.19",
+    "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
