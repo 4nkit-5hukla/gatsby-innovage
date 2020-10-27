@@ -149,10 +149,6 @@ const Contactform = props => {
                 encType="multipart/form-data"
                 onSubmit={e => formSubmit(e)}
               >
-                <div className="response">
-                  {response}
-                  {response_Error}
-                </div>
                 <div>
                   <div id="success-contact-form" className="mx-0"></div>
                   <input
@@ -188,8 +184,12 @@ const Contactform = props => {
                     type="submit"
                     className="btn btn-small border-radius-4 btn-dark-gray"
                   >
-                    send message
+                    Send Message
                   </button>
+                </div>
+                <div className="response">
+                  {response}
+                  {response_Error}
                 </div>
               </form>
             </div>
