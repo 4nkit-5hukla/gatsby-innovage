@@ -7,7 +7,9 @@ import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap"
 const Header = props => {
   const { data } = props,
     [isOpen, setIsOpen] = useState(false),
-    [scrollTo, setScrollTo] = useState(localStorage.getItem("scrollTo")),
+    [scrollTo, setScrollTo] = useState(
+      typeof window !== "undefined" ? localStorage.getItem("scrollTo") : null
+    ),
     headerLogo = data.headerlogo.imageFile.childImageSharp.original,
     mainMenu = data.mainMenu,
     toggle = () => setIsOpen(!isOpen),
@@ -23,7 +25,9 @@ const Header = props => {
       } else {
         navigate("/")
         setScrollTo(target)
-        localStorage.setItem("scrollTo", target)
+        if (typeof window !== "undefined") {
+          localStorage.setItem("scrollTo", target)
+        }
       }
     }
   useEffect(() => {
@@ -34,7 +38,9 @@ const Header = props => {
         },
         500
       )
-      localStorage.removeItem("scrollTo")
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("scrollTo")
+      }
     }
   }, [scrollTo])
   return (
