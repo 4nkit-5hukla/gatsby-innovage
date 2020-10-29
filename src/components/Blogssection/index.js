@@ -53,7 +53,10 @@ const Blogssection = props => {
         id={props.id !== "" ? props.id : null}
         className="wow fadeIn parallax bg-fixed arch-blog-banner"
         style={{
-          backgroundImage: `url(${props.content.backgroundimage.imageFile.childImageSharp.original.src})`,
+          backgroundImage:
+            props.content.backgroundimage !== null
+              ? `url(${props.content.backgroundimage.imageFile.childImageSharp.original.src})`
+              : `none`,
         }}
       >
         <div className="layer bg-layer"></div>
@@ -86,18 +89,20 @@ const Blogssection = props => {
                     className="col-12 col-lg-3 col-md-6 margin-50px-bottom last-paragraph-no-margin sm-margin-30px-bottom wow fadeInUp"
                   >
                     <div className="blog-post blog-post-style1 text-center text-md-left">
-                      <div className="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom">
-                        <Link to={`/blogs/${slug}/`}>
-                          <img
-                            src={
-                              featuredImage.imageFile.childImageSharp.original
-                                .src
-                            }
-                            alt={featuredImage.altText}
-                            className="mb-0"
-                          />
-                        </Link>
-                      </div>
+                      {featuredImage !== null && (
+                        <div className="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom">
+                          <Link to={`/blogs/${slug}/`}>
+                            <img
+                              src={
+                                featuredImage.imageFile.childImageSharp.original
+                                  .src
+                              }
+                              alt={featuredImage.altText}
+                              className="mb-0"
+                            />
+                          </Link>
+                        </div>
+                      )}
                       <div className="post-details">
                         <span className="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">
                           {getDate(date)} | by {author.name}

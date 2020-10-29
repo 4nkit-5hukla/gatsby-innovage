@@ -7,14 +7,16 @@ const Section8 = props => {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <img
-              src={
-                props.content.sectionimage.imageFile.childImageSharp.original
-                  .src
-              }
-              alt={props.content.sectionimage.altText}
-              className="mb-0"
-            />
+            {props.content.sectionimage !== null && (
+              <img
+                src={
+                  props.content.sectionimage.imageFile.childImageSharp.original
+                    .src
+                }
+                alt={props.content.sectionimage.altText}
+                className="mb-0"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -16,7 +16,10 @@ const Section4 = props => {
                   <div
                     className="col-12 col-lg-3 p-0 cover-background position-relative md-height-500px sm-height-300px wow fadeIn"
                     style={{
-                      backgroundImage: `url(${bgImage.imageFile.childImageSharp.original.src})`,
+                      backgroundImage:
+                        bgImage !== null
+                          ? `url(${bgImage.imageFile.childImageSharp.original.src})`
+                          : `none`,
                     }}
                   ></div>
                   <div

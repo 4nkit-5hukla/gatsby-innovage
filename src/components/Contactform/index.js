@@ -196,11 +196,13 @@ const Contactform = props => {
           </div>
           <div className="col-12 col-lg-6 last-paragraph-no-margin wow fadeInRight">
             <div className="padding-ten-all bg-light-gray border-radius-6 lg-padding-seven-all sm-padding-30px-all h-100 text-center text-lg-left">
-              <img
-                src={props.content.image.imageFile.childImageSharp.original.src}
-                alt={props.content.image.altText}
-                className="border-radius-6 margin-35px-bottom sm-margin-30px-bottom"
-              />
+              {props.content.image !== null && (
+                <img
+                  src={props.content.image.imageFile.childImageSharp.original.src}
+                  alt={props.content.image.altText}
+                  className="border-radius-6 margin-35px-bottom sm-margin-30px-bottom"
+                />
+              )}
               <span className="text-large font-weight-600 alt-font text-extra-dark-gray margin-5px-bottom d-block">
                 {props.content.title}
               </span>

@@ -7,7 +7,10 @@ const Section2 = props => {
       id={props.id !== "" ? props.id : null}
       className="wow fadeIn cover-background md-no-background-img bg-image bg-medium-light-gray"
       style={{
-        backgroundImage: `url(${props.content.backgroundImage.imageFile.childImageSharp.original.src})`,
+        backgroundImage:
+          props.content.backgroundImage !== null
+            ? `url(${props.content.backgroundImage.imageFile.childImageSharp.original.src})`
+            : `none`,
       }}
     >
       <div className="container">

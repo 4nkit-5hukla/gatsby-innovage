@@ -14,7 +14,10 @@ const Contactgrid = props => {
               <div
                 className="w-100 d-table position-relative cover-background small-screen sm-height-300px"
                 style={{
-                  backgroundImage: `url(${props.content.left.image.imageFile.childImageSharp.original.src})`,
+                  backgroundImage:
+                    props.content.left.image !== null
+                      ? `url(${props.content.left.image.imageFile.childImageSharp.original.src})`
+                      : `none`,
                 }}
               />
               <div className="w-100 small-screen sm-height-300px d-table arrow-top">
@@ -46,7 +49,10 @@ const Contactgrid = props => {
               <div
                 className="w-100 d-table position-relative cover-background small-screen sm-height-300px"
                 style={{
-                  backgroundImage: `url(${props.content.center.image.imageFile.childImageSharp.original.src})`,
+                  backgroundImage:
+                    props.content.center.image !== null
+                      ? `url(${props.content.center.image.imageFile.childImageSharp.original.src})`
+                      : `none`,
                 }}
               />
             </div>
@@ -56,7 +62,10 @@ const Contactgrid = props => {
               <div
                 className="w-100 d-table position-relative cover-background small-screen sm-height-300px"
                 style={{
-                  backgroundImage: `url(${props.content.right.image.imageFile.childImageSharp.original.src})`,
+                  backgroundImage:
+                    props.content.right.image !== null
+                      ? `url(${props.content.right.image.imageFile.childImageSharp.original.src})`
+                      : `none`,
                 }}
               />
               <div className="w-100 small-screen sm-height-300px d-table arrow-top">

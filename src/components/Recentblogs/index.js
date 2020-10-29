@@ -77,28 +77,40 @@ const Recentblogs = props => {
                 >
                   <div className="blog-post blog-post-style1 text-center text-md-left">
                     <div className="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom">
-                      <Link to={`/blogs/${slug}/`}>
-                        <img
-                          src={
-                            featuredImage.imageFile.childImageSharp.original.src
-                          }
-                          alt={featuredImage.altText}
-                          className="mb-0"
-                        />
-                      </Link>
+                      {featuredImage !== null && (
+                        <Link to={`/blogs/${slug}/`}>
+                          <img
+                            src={
+                              featuredImage.imageFile.childImageSharp.original
+                                .src
+                            }
+                            alt={featuredImage.altText}
+                            className="mb-0"
+                          />
+                        </Link>
+                      )}
                     </div>
                     <div className="post-details">
-                      <span className="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">
-                        {props.content.displayDate ? `${getDate(date)}` : ``}
-                        {props.content.displayDate ? ` | by ` : `by `}
-                        {props.content.displayUser ? `${author.name}` : ``}
-                      </span>
+                      {featuredImage !== null && (
+                        <span className="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">
+                          {props.content.displayDate ? `${getDate(date)}` : ``}
+                          {props.content.displayDate ? ` | by ` : `by `}
+                          {props.content.displayUser ? `${author.name}` : ``}
+                        </span>
+                      )}
                       <Link
                         to={`/blogs/${slug}/`}
                         className="post-title text-medium text-extra-dark-gray width-90 md-width-100 d-block"
                       >
                         {title}
                       </Link>
+                      {featuredImage === null && (
+                        <span className="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">
+                          {props.content.displayDate ? `${getDate(date)}` : ``}
+                          {props.content.displayDate ? ` | by ` : `by `}
+                          {props.content.displayUser ? `${author.name}` : ``}
+                        </span>
+                      )}
                       <div className="separator-line-horrizontal-full bg-medium-light-gray margin-20px-tb md-margin-15px-tb"></div>
                       <div className="width-90 sm-width-100">
                         {ReactHtmlParser(excerpt)}

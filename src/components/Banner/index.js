@@ -7,7 +7,10 @@ const Banner = props => {
       className="wow fadeIn parallax bg-fixed"
       data-stellar-background-ratio="0.5"
       style={{
-        backgroundImage: `url(${props.content.bgimage.imageFile.childImageSharp.original.src})`,
+        backgroundImage:
+          props.content.bgimage !== null
+            ? `url(${props.content.bgimage.imageFile.childImageSharp.original.src})`
+            : `none`,
       }}
     >
       <div className="layer bg-layer"></div>

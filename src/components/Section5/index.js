@@ -15,13 +15,16 @@ const Section5 = props => {
             </div>
           </div>
           <div className="col-12 col-lg-6 text-center">
-            <img
-              src={
-                props.content.rightImage.imageFile.childImageSharp.original.src
-              }
-              alt={props.content.rightImage.altText}
-              className="w-100"
-            />
+            {props.content.rightImage !== null && (
+              <img
+                src={
+                  props.content.rightImage.imageFile.childImageSharp.original
+                    .src
+                }
+                alt={props.content.rightImage.altText}
+                className="w-100"
+              />
+            )}
           </div>
         </div>
       </div>

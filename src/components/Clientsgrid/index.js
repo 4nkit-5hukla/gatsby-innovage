@@ -15,21 +15,25 @@ const Clientsgrid = props => {
         </div>
         <div className="row">
           {props.content.clients.map(({ link, logo }, index) => {
-            return (
-              <div
-                key={index}
-                className="col-12 col-lg-4 col-md-6 wow fadeInUp"
-              >
-                <div className="bg-white clients-list text-center d-flex align-items-center justify-content-center w-100 margin-30px-bottom">
-                  <Link to={link.url} title={link.title}>
-                    <img
-                      src={logo.imageFile.childImageSharp.original.src}
-                      alt=""
-                    />
-                  </Link>
+            if (logo) {
+              return (
+                <div
+                  key={index}
+                  className="col-12 col-lg-4 col-md-6 wow fadeInUp"
+                >
+                  <div className="bg-white clients-list text-center d-flex align-items-center justify-content-center w-100 margin-30px-bottom">
+                    <Link to={link.url} title={link.title}>
+                      <img
+                        src={logo.imageFile.childImageSharp.original.src}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            )
+              )
+            } else {
+              return null
+            }
           })}
         </div>
       </div>

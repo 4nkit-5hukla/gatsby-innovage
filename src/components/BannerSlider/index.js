@@ -28,16 +28,24 @@ const BannerSlider = props => {
           if (slide.enable) {
             return (
               <div key={index} className="home-banner-content bg-image">
-                <div className="bg-layer">
-                  <img
-                    className="img-fluid mb-0"
-                    src={slide.image.imageFile.childImageSharp.original.src}
-                    height={
-                      slide.image.imageFile.childImageSharp.original.height
-                    }
-                    width={slide.image.imageFile.childImageSharp.original.width}
-                    alt={slide.image.altText}
-                  />
+                <div
+                  className={`${
+                    slide.image !== null ? `bg-layer` : `bg-layer vh-100`
+                  }`}
+                >
+                  {slide.image !== null && (
+                    <img
+                      className="img-fluid mb-0"
+                      src={slide.image.imageFile.childImageSharp.original.src}
+                      height={
+                        slide.image.imageFile.childImageSharp.original.height
+                      }
+                      width={
+                        slide.image.imageFile.childImageSharp.original.width
+                      }
+                      alt={slide.image.altText}
+                    />
+                  )}
                 </div>
                 <Container className="banner-data">
                   <Row>

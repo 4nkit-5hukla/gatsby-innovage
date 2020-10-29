@@ -22,7 +22,10 @@ const Post = ({ data }) => {
       <section
         className="wow fadeIn parallax"
         style={{
-          backgroundImage: `url(${data.wpgraphql.post.featuredImage.imageFile.childImageSharp.original.src})`,
+          backgroundImage:
+            data.wpgraphql.post.featuredImage !== null
+              ? `url(${data.wpgraphql.post.featuredImage.imageFile.childImageSharp.original.src})`
+              : `none`,
           backgroundPosition: "0px 0px",
           visibility: "visible",
           animationName: "fadeIn",

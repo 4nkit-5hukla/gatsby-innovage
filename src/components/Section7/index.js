@@ -27,11 +27,13 @@ const Section7 = props => {
                   className="col-12 col-md-4 sm-margin-30px-bottom wow fadeInUp"
                 >
                   <div className="feature-box-16 sm-width-100">
-                    <img
-                      src={image.imageFile.childImageSharp.original.src}
-                      alt={image.altText}
-                      className="mb-0"
-                    />
+                    {image !== null && (
+                      <img
+                        src={image.imageFile.childImageSharp.original.src}
+                        alt={image.altText}
+                        className="mb-0"
+                      />
+                    )}
                     <div className="feature-box-content text-center">
                       <div className="opacity-full-dark bg-extra-dark-gray"></div>
                       <div className="d-table h-100 w-100 position-relative">

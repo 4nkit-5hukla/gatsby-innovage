@@ -34,13 +34,17 @@ const Testimonials = props => {
                       </div>
 
                       <div className="testimonial-box padding-25px-all sm-padding-20px-all">
-                        <div className="image-box width-20">
-                          <img
-                            src={avatar.imageFile.childImageSharp.original.src}
-                            className="rounded-circle"
-                            alt={avatar.altText}
-                          />
-                        </div>
+                        {avatar !== null && (
+                          <div className="image-box width-20">
+                            <img
+                              src={
+                                avatar.imageFile.childImageSharp.original.src
+                              }
+                              className="rounded-circle"
+                              alt={avatar.altText}
+                            />
+                          </div>
+                        )}
                         <div className="name-box padding-20px-left">
                           <div className="alt-font font-weight-600 text-small text-uppercase text-extra-dark-gray">
                             {name}

@@ -10,7 +10,10 @@ const Header = props => {
     [scrollTo, setScrollTo] = useState(
       typeof window !== "undefined" ? localStorage.getItem("scrollTo") : null
     ),
-    headerLogo = data.headerlogo.imageFile.childImageSharp.original,
+    headerLogo =
+      data.headerlogo !== null
+        ? data.headerlogo.imageFile.childImageSharp.original
+        : null,
     mainMenu = data.mainMenu,
     toggle = () => setIsOpen(!isOpen),
     handleClick = (e, target) => {

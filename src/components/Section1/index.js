@@ -30,17 +30,22 @@ const Section1 = props => {
                     <div
                       className="banner-image height-250px cover-background bg-image"
                       style={{
-                        backgroundImage: `url(${boxbg.imageFile.childImageSharp.original.src})`,
+                        backgroundImage:
+                          boxbg !== null
+                            ? `url(${boxbg.imageFile.childImageSharp.original.src})`
+                            : `none`,
                       }}
                     />
                     <figcaption>
                       <div className="d-flex flex-column justify-content-center align-items-center text-center h-100 lg-margin-30px-bottom">
-                        <div>
-                          <img
-                            src={logo.imageFile.childImageSharp.original.src}
-                            alt=""
-                          />
-                        </div>
+                        {logo !== null && (
+                          <div>
+                            <img
+                              src={logo.imageFile.childImageSharp.original.src}
+                              alt=""
+                            />
+                          </div>
+                        )}
                         <div className="width-80 mx-auto text-medium-gray sm-width-100">
                           {ReactHtmlParser(description)}
                         </div>

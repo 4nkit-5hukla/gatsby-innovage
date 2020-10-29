@@ -7,7 +7,10 @@ const Parallaxsection = props => {
       className="parallax big-section wow fadeIn"
       data-stellar-background-ratio="0.5"
       style={{
-        backgroundImage: `url(${props.content.backgroundimage.imageFile.childImageSharp.original.src})`,
+        backgroundImage:
+          props.content.backgroundimage !== null
+            ? `url(${props.content.backgroundimage.imageFile.childImageSharp.original.src})`
+            : `none`,
       }}
     >
       <div className="opacity-extra-medium bg-black"></div>
